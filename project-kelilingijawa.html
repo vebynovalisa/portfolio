@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KelilingiJawa | Veby Novalisa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="detail.css">
+    <style>
+    .d-hero .actions { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); width: fit-content; gap: 20px; }
+    .d-hero .actions .btn { justify-content: center; }
+    @media (max-width: 600px) { .d-hero .actions { grid-auto-flow: row; grid-auto-columns: 1fr; width: 100%; } }
+    .d-gallery.phones { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .d-gallery.phones.three { grid-template-columns: repeat(4, 1fr); max-width: none; margin-inline: 0; }
+    .d-meta { display: grid; grid-template-columns: 1.7fr 1.1fr .8fr .8fr; gap: 0; }
+    .d-meta > div { padding-left: 32px; border-left: 1px solid color-mix(in srgb, currentColor 18%, transparent); }
+    .d-meta > div:first-child { padding-left: 0; border-left: 0; }
+    @media (max-width: 900px) {
+      .d-meta { grid-template-columns: repeat(2, 1fr); gap: 20px 0; }
+      .d-meta > div:nth-child(odd) { padding-left: 0; border-left: 0; }
+    }
+    @media (max-width: 500px) {
+      .d-meta { grid-template-columns: 1fr; }
+      .d-meta > div, .d-meta > div:nth-child(even) { padding-left: 0; border-left: 0; }
+    }
+    .d-gallery.phones .d-shot > div { aspect-ratio: 676 / 1280; background: var(--bg); border: 1.5px solid rgba(75, 82, 51, 0.3); }
+    .d-gallery.phones .d-shot img { object-fit: contain; filter: drop-shadow(0 10px 16px rgba(51, 48, 31, 0.25)); }
+    @media (max-width: 900px) { .d-gallery.phones, .d-gallery.phones.three { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .d-gallery.phones.three { grid-template-columns: 1fr; max-width: 260px; } }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html#home">
+        <span class="logo">VN</span>
+        <span class="brand-name">Veby Novalisa</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#portfolio" class="active">Portfolio</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Contact</a>
+    </div>
+  </header>
+
+  <main class="d-wrap">
+    <a class="d-back" href="index.html#portfolio">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span lang="en">Back to portfolio</span>
+    </a>
+
+    <section class="d-hero">
+      <div>
+        <p class="eyebrow"><span lang="en">UI/UX Design · Team project</span></p>
+        <h1>Kelilingi<em>Jawa</em></h1>
+        <p class="d-lead">
+          <span lang="en">A mobile app prototype for open trips in Java, designed around one idea: show how well each group trip matches you, then plan the days for you.</span>
+          
+        </p>
+        <div class="actions">
+          <a class="btn btn-solid" href="https://www.figma.com/design/EAd5dVOsHtVTyS0voKo1uB/AOL-AI?node-id=0-1" target="_blank" rel="noopener"><span>Figma</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="btn btn-outline" href="https://drive.google.com/drive/folders/1iJS8oXdDOG31tGaYlDQwwdvI2uiYcaa6?usp=drive_link" target="_blank" rel="noopener"><span><span lang="en">All files</span></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div class="d-cover"><img src="assets/kelilingijawa.png" alt="KelilingiJawa" onerror="this.classList.add('broken')"></div>
+    </section>
+
+    <dl class="d-meta">
+      <div><dt><span lang="en">My role</span></dt><dd><span lang="en">UI/UX Design<br>Research Idea Development<br>Research Paper Writing</span></dd></div>
+      <div><dt><span lang="en">Team</span></dt><dd><span lang="en">Team of 6</span></dd></div>
+      <div><dt><span lang="en">Year</span></dt><dd>2026</dd></div>
+      <div><dt>Tools</dt><dd>Figma</dd></div>
+    </dl>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">The problem</span></h2>
+      <p class="d-intro"><span lang="en">Open trips put strangers in one group. When budgets, travel styles, or interests differ, the trip is less comfortable for everyone.</span></p>
+      <div class="d-cols">
+        <div class="d-box"><h3><span lang="en">Grouping is manual</span></h3>
+          <p><span lang="en">Most platforms group participants by hand or by simple category filters.</span></p></div>
+        <div class="d-box"><h3><span lang="en">No sense of fit</span></h3>
+          <p><span lang="en">Users cannot tell how well a trip suits their budget, style, and schedule before joining.</span></p></div>
+        <div class="d-box"><h3><span lang="en">The design goal</span></h3>
+          <p><span lang="en">Make the match visible and the whole trip clear, so a first-time solo traveller can choose with confidence.</span></p></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">The screens</span></h2>
+      <p class="d-intro"><span lang="en">From onboarding to browsing, designed mobile-first.</span></p>
+      <div class="d-gallery phones">
+        <figure class="d-shot"><div><img src="assets/kelilingijawa/welcome.png" alt="Welcome page" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">Welcome</span></figcaption></figure>
+        <figure class="d-shot"><div><img src="assets/kelilingijawa/login.png" alt="Login" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">Login</span></figcaption></figure>
+        <figure class="d-shot"><div><img src="assets/kelilingijawa/signup.png" alt="Sign up" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">Sign up</span></figcaption></figure>
+        <figure class="d-shot"><div><img src="assets/kelilingijawa/preferences.png" alt="Travel preferences" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">Travel preferences</span></figcaption></figure>
+        <figure class="d-shot"><div><img src="assets/kelilingijawa/home.png" alt="Home" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">Home</span></figcaption></figure>
+        <figure class="d-shot"><div><img src="assets/kelilingijawa/bestmatch.png" alt="Best match group trips" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">Best match group trips</span></figcaption></figure>
+        <figure class="d-shot"><div><img src="assets/kelilingijawa/wishlist.png" alt="Wish list" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">Wish list</span></figcaption></figure>
+        <figure class="d-shot"><div><img src="assets/kelilingijawa/profile.png" alt="Profile" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">Profile</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Trip detail</span></h2>
+      <p class="d-intro"><span lang="en">The most important screen is one long page you scroll through. Here it is in three parts, top to bottom.</span></p>
+      <div class="d-gallery phones three">
+        <figure class="d-shot"><div><img src="assets/kelilingijawa/detail.png" alt="Trip detail, top" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">1. Top: photo, description, start of the timeline</span></figcaption></figure>
+        <figure class="d-shot"><div><img src="assets/kelilingijawa/itinerary.png" alt="Trip detail, middle" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">2. Middle: day-by-day timeline, what is included, meeting point</span></figcaption></figure>
+        <figure class="d-shot"><div><img src="assets/kelilingijawa/booking.png" alt="Trip detail, bottom" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">3. Bottom: price and Booking Now stay fixed</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">User flow</span></h2>
+      <p class="d-intro"><span lang="en">Four steps from opening the app to a confirmed booking.</span></p>
+      <ol class="d-flow">
+        <li><h3>Onboarding</h3><p><span lang="en">Welcome screen, then sign up or log in with email, Google, or Facebook.</span></p></li>
+        <li><h3><span lang="en">Preferences</span></h3><p><span lang="en">Seven short questions: age, origin, trip type, travel style, motivation, food, and preferred time.</span></p></li>
+        <li><h3><span lang="en">Discover</span></h3><p><span lang="en">Search by area and dates, browse categories, open popular trips, or check best matches.</span></p></li>
+        <li><h3><span lang="en">Book</span></h3><p><span lang="en">Read the trip detail, enter booking details, pick a payment method, and get a confirmation.</span></p></li>
+      </ol>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Design decisions</span></h2>
+      <div class="d-cols">
+        <div class="d-box"><h3><span lang="en">The match is always visible</span></h3>
+          <p><span lang="en">Each trip in Best Match shows a percentage and a progress bar, sorted from highest to lowest, so the choice is quick.</span></p></div>
+        <div class="d-box"><h3><span lang="en">One page tells the whole trip</span></h3>
+          <p><span lang="en">Description, a day-by-day timeline, what is included, and the meeting point on a map. Price and the booking button stay fixed at the bottom.</span></p></div>
+        <div class="d-box"><h3><span lang="en">Calm, earthy look</span></h3>
+          <p><span lang="en">Olive and brown tones with a mustard accent for active states, and a four-tab bottom navigation: home, trips, wishlist, profile.</span></p></div>
+      </div>
+      <div class="d-stats">
+        <div class="d-stat"><b>7</b><span><span lang="en">preference questions</span></span></div>
+        <div class="d-stat"><b>3</b><span><span lang="en">day itinerary timeline</span></span></div>
+        <div class="d-stat"><b>4</b><span><span lang="en">bottom navigation tabs</span></span></div>
+        <div class="d-stat"><b>2</b><span><span lang="en">languages (EN, ID)</span></span></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">The idea behind it</span></h2>
+      <p class="d-intro"><span lang="en">This was an AI course project. The proposal describes the matching engine; the screens show how its results would reach the user.</span></p>
+      <div class="d-cols">
+        <div class="d-box"><h3>Similarity scoring</h3><p><span lang="en">Preferences such as budget, style, schedule, and interests become weighted numbers, then are compared with each event.</span></p></div>
+        <div class="d-box"><h3>Clustering</h3><p><span lang="en">Users with similar preferences are grouped, and each group becomes a profile used to draft event templates.</span></p></div>
+        <div class="d-box"><h3><span lang="en">Daily itinerary</span></h3><p><span lang="en">After matching, the system drafts the day-by-day order of destinations, which organisers can adjust.</span></p></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Limits and next steps</span></h2>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Limitations</span></h3>
+          <ul><li><span lang="en">A Figma prototype only: no working app or backend</span></li>
+          <li><span lang="en">Trips, prices, and match percentages are sample content, not output of a built model</span></li>
+          <li><span lang="en">The organiser side, where events are published, is not designed yet</span></li>
+          <li><span lang="en">The matching method is described only in concept: the weights, the clustering algorithm, and any comparison with simple filters are not specified or measured</span></li>
+          <li><span lang="en">The prototype has not been tested with users</span></li></ul></div>
+        <div class="d-quote"><h3><span lang="en">Next steps</span></h3>
+          <ul style="color:inherit">
+            <li><span lang="en">Test the prototype with real open-trip users</span></li>
+            <li><span lang="en">Design the organiser dashboard and event publishing</span></li>
+            <li><span lang="en">Build the matching engine and connect it to the screens</span></li>
+            <li><span lang="en">Check text contrast and accessibility</span></li>
+          </ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">My contribution</span></h2>
+      <p class="d-intro"><span lang="en">A team project for the Artificial Intelligence course at BINUS University, built by six people (Group 7). All of us shaped the research idea and wrote the paper. I was one of three people who designed the app interface in Figma, while the other teammates covered the presentation, the system concept, and the final manuscript.</span></p>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">What I did</span></h3>
+          <ul><li><span lang="en">Helped formulate the research idea</span></li>
+          <li><span lang="en">Wrote parts of the scientific article</span></li>
+          <li><span lang="en">Designed app screens for the prototype in Figma</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Done together</span></h3>
+          <ul><li><span lang="en">Choosing the topic and the matchmaking approach</span></li>
+          <li><span lang="en">The Figma interface, shared with two teammates</span></li>
+          <li><span lang="en">The presentation, the system concept, and the final manuscript, handled by other teammates</span></li></ul></div>
+      </div>
+    </section>
+
+    <div class="d-end">
+      <a class="btn btn-outline" href="index.html#portfolio"><span lang="en">Back to portfolio</span></a>
+    </div>
+  </main>
+
+  <script src="detail.js"></script>
+</body>
+</html>

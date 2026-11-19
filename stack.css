@@ -1,0 +1,51 @@
+.pf-grid.is-stack { display: block; }
+.stack-cat + .stack-cat { margin-top: 36px; }
+.stack-cat h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; margin-bottom: 14px; }
+
+.stack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 12px; }
+.stack-grid + .stack-grid { margin-top: 12px; }
+.stack-grid[hidden] { display: none; }
+
+.stack-item {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding: 18px 8px 14px;
+  background: var(--bg);
+  border: 1.5px solid rgba(75, 82, 51, 0.25); border-radius: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: rise 0.5s ease both;
+}
+.stack-item:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(75, 82, 51, 0.16); }
+.stack-item.main { border-color: var(--olive); }
+
+.stack-logo { width: 40px; height: 40px; display: grid; place-items: center; }
+.stack-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.stack-mono {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: grid; place-items: center;
+  background: var(--olive); color: var(--bg);
+  font-size: 0.95rem; font-weight: 700;
+}
+.stack-name { font-size: 0.8rem; font-weight: 600; line-height: 1.3; text-align: center; color: var(--olive); }
+
+.stack-more {
+  margin-top: 14px;
+  font: inherit; font-size: 0.88rem; font-weight: 600;
+  padding: 8px 18px; border-radius: 999px;
+  border: 1.5px solid var(--olive);
+  background: transparent; color: var(--olive);
+  cursor: pointer; transition: background 0.2s, color 0.2s;
+}
+.stack-more:hover { background: var(--olive); color: var(--bg); }
+
+.stack-legend { display: flex; align-items: center; gap: 8px; margin-top: 32px; font-size: 0.85rem; color: var(--muted); }
+.stack-legend::before { content: ""; width: 14px; height: 14px; border-radius: 4px; background: var(--sage-soft); border: 1.5px solid var(--olive); }
+
+@media (max-width: 600px) {
+  .stack-grid { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stack-item { animation: none; transition: none; }
+  .stack-item:hover { transform: none; }
+}
+
+.stack-item[hidden] { display: none; }

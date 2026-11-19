@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anemia Detection | Veby Novalisa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="detail.css">
+  <style>
+    .d-meta > div + div { padding-left: 28px; border-left: 1px solid color-mix(in srgb, currentColor 18%, transparent); }
+    @media (max-width: 900px) { .d-meta > div + div { padding-left: 0; border-left: 0; } }
+    .d-hero .actions { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; width: fit-content; gap: 20px; }
+    .d-hero .actions .btn { justify-content: center; }
+    .d-shot.wide { grid-column: 1 / -1; }
+    .d-shot.wide > div { aspect-ratio: 16 / 9; }
+    .d-gallery .d-shot.chart { background: transparent !important; box-shadow: none !important; border: 0 !important; padding: 0 !important; }
+    .d-gallery .d-shot.chart > div { box-sizing: border-box !important; padding: 24px !important; border: 1.5px solid rgba(75, 82, 51, 0.3) !important; border-radius: 24px !important; background: var(--bg) !important; overflow: hidden; }
+    .d-gallery .d-shot.chart img { position: static !important; inset: auto !important; display: block; width: 100% !important; height: 100% !important; box-sizing: border-box; object-fit: contain; background: #fff; border-radius: 10px; border: 1px solid rgba(75, 82, 51, 0.18); box-shadow: 0 8px 20px rgba(51, 48, 31, .12); }
+    .d-flow.five { grid-template-columns: repeat(5, 1fr); }
+    @media (max-width: 900px) { .d-flow.five { grid-template-columns: 1fr; } }
+    .d-note a { color: var(--olive); text-decoration: underline; }
+    .d-gallery.pair { grid-template-columns: 4fr 6fr; }
+    .d-gallery.pair .d-shot > div { aspect-ratio: auto; height: 310px; }
+    .d-sec > h3 + .d-gallery { margin-top: 12px; }
+    .d-sec > .d-gallery + h3 { margin-top: 36px; }
+    @media (max-width: 900px) { .d-gallery.pair { grid-template-columns: 1fr; } .d-gallery.pair .d-shot > div { height: auto; aspect-ratio: 16 / 10; } }
+    @media (max-width: 700px) { .d-gallery .d-shot.chart > div { padding: 14px !important; border-radius: 18px !important; } }
+    .d-split.dataset { align-items: start; row-gap: 0; }
+    .d-split.dataset > .d-shot { display: contents; }
+    .d-split.dataset > .d-shot > div { grid-column: 1; grid-row: 1; }
+    .d-split.dataset > .d-shot > figcaption { grid-column: 1; grid-row: 2; margin-top: 12px; }
+    .d-split.dataset > .d-box { grid-column: 2; grid-row: 1; align-self: stretch; }
+    @media (max-width: 900px) {
+      .d-split.dataset > .d-shot > div, .d-split.dataset > .d-shot > figcaption, .d-split.dataset > .d-box { grid-column: auto; grid-row: auto; }
+      .d-split.dataset > .d-box { margin-top: 20px; }
+    }
+    .lp-group { margin-top: 44px; }
+    .lp-group:first-of-type { margin-top: 28px; }
+    .lp-group > h3 { font-family: "Fraunces", serif; font-weight: 500; font-size: 1.4rem; margin: 0 0 6px; }
+    .lp-desc { margin: 0 0 18px; max-width: 62ch; opacity: .8; }
+    .lp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; align-items: start; }
+    .lp-grid.three { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .lp-shot { margin: 0; }
+    .lp-shot.wide { grid-column: 1 / -1; max-width: 820px; width: 100%; margin-inline: 0; }
+    .lp-tile { display: block; width: 100%; padding: 18px; border: 1.5px solid rgba(75, 82, 51, 0.3); border-radius: 24px; background: var(--bg); cursor: zoom-in; transition: transform .2s; }
+    .lp-grid.three .lp-tile { padding: 12px; border-radius: 18px; }
+    .lp-tile:hover { transform: translateY(-3px); }
+    .lp-tile:focus-visible { outline: 3px solid #4b5233; outline-offset: 3px; }
+    .lp-win { display: block; border-radius: 10px; overflow: hidden; background: #fff; border: 1px solid rgba(75, 82, 51, 0.18); box-shadow: 0 8px 20px rgba(51, 48, 31, .12); }
+    .lp-win img { display: block; width: 100%; height: auto; background: #fff; }
+    .lp-grid.three .lp-win img { aspect-ratio: 6 / 5; object-fit: contain; }
+    .lp-grid.three.curves .lp-win img { aspect-ratio: 13 / 5; }
+    .lp-grid.curves .lp-win img { aspect-ratio: 13 / 5; object-fit: contain; }
+    .lp-shot figcaption { margin-top: 10px; font-size: .92rem; line-height: 1.45; }
+    .d-table.bycol th:nth-child(3), .d-table.bycol td:nth-child(3) { font-weight: 700; }
+    @media (max-width: 900px) { .lp-grid.three { grid-template-columns: 1fr; } .lp-grid.three .lp-win img { aspect-ratio: auto; } }
+    @media (max-width: 700px) { .lp-grid { grid-template-columns: 1fr; } .lp-tile { padding: 14px; border-radius: 18px; } }
+    .lp-box { position: fixed; inset: 0; z-index: 100; display: none; overflow: auto; background: rgba(35, 33, 22, .88); padding: 32px 16px; cursor: zoom-out; }
+    .lp-box.on { display: block; }
+    .lp-box img { display: block; width: min(1500px, 100%); margin: 0 auto; border-radius: 8px; background: #fff; }
+    .lp-x { position: fixed; top: 14px; right: 20px; color: #fff; font-size: 2.2rem; line-height: 1; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html#home">
+        <span class="logo">VN</span>
+        <span class="brand-name">Veby Novalisa</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#portfolio" class="active">Portfolio</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Contact</a>
+    </div>
+  </header>
+
+  <main class="d-wrap">
+    <a class="d-back" href="index.html#portfolio">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span lang="en">Back to portfolio</span>
+    </a>
+
+    <section class="d-hero">
+      <div>
+        <p class="eyebrow">AI/ML, Research, Team project</p>
+        <h1>Anemia <em>Detection</em></h1>
+        <p class="d-lead">A research project that screens for anemia from fingernail photos, with no blood draw needed. Three pre-trained CNNs (DenseNet169, InceptionV3, and Xception) are compared on the same test set.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="https://github.com/vebynovalisa/Anemia-Detection-Non-Invasive-Screening-from-Fingernail-Images-Using-CNN" target="_blank" rel="noopener"><span>GitHub</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="btn btn-outline" href="assets/anemia/paper.pdf" target="_blank" rel="noopener"><span>Read paper</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div class="d-cover"><img src="assets/anemia.png" alt="Anemia Detection" onerror="this.classList.add('broken')"></div>
+    </section>
+
+    <dl class="d-meta">
+      <div><dt><span lang="en">My role</span></dt><dd><span lang="en">Model Training &amp; Evaluation<br>Research Poster<br>Report Writing</span></dd></div>
+      <div><dt><span lang="en">Team</span></dt><dd><span lang="en">Team of 3</span></dd></div>
+      <div><dt><span lang="en">Year</span></dt><dd>2026</dd></div>
+      <div><dt>Tools</dt><dd>Python, TensorFlow/Keras, OpenCV</dd></div>
+    </dl>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">The problem</span></h2>
+      <p class="d-intro">Anemia means too little haemoglobin (Hb), the protein that carries oxygen in the blood. Here, Hb below 11 g/dL counts as anemic. It is usually confirmed with a blood test, which is hard to reach in areas with limited lab access.</p>
+      <div class="d-cols">
+        <div class="d-box"><h3><span lang="en">Blood tests are costly</span></h3>
+          <ul><li><span lang="en">A Complete Blood Count is invasive and needs lab facilities and trained staff</span></li>
+          <li><span lang="en">It costs roughly Rp100,000 to 300,000 per test in Indonesia</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Eyeballing is unreliable</span></h3>
+          <ul><li><span lang="en">Pale nail beds are a known clinical sign of anemia</span></li>
+          <li><span lang="en">Manual inspection is reported at only 50 to 70% accuracy, because of observer bias, lighting, and skin tone</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">The approach</span></h3>
+          <ul><li><span lang="en">Binary classification: anemic vs non-anemic, straight from a fingernail photo</span></li>
+          <li><span lang="en">Lighting normalisation and nail-region extraction before the CNN</span></li>
+          <li><span lang="en">Meant as a screening aid, not a diagnosis</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2>Results at a glance</h2>
+      <p class="d-intro">The evaluation figures from the experiments: the model comparison first, then a confusion matrix and training curves for each model. Click any figure to see it full size.</p>
+
+      <div class="lp-group">
+        <h3>Model comparison</h3>
+        <p class="lp-desc">The three models on the same 670 test images, and a quick guide to the numbers.</p>
+        <div class="lp-grid">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/anemia/metrics-comparison.png" aria-label="Performance comparison of DenseNet169, InceptionV3 and Xception"><span class="lp-win"><img src="assets/anemia/metrics-comparison.png" alt="Performance comparison of DenseNet169, InceptionV3 and Xception" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption>Accuracy, precision, recall, and F1 for the three models</figcaption></figure>
+          <div class="d-box"><h3>How to read the numbers</h3>
+            <ul><li><b>Accuracy:</b> the share of all test photos classified correctly</li>
+            <li><b>Recall (anemic):</b> of the photos that really are anemic, the share the model caught. Missing one is the costly mistake in screening</li>
+            <li><b>Precision (anemic):</b> of the photos the model flags as anemic, the share that really are</li>
+            <li><b>AUC-ROC:</b> how well the model separates the two classes across all decision thresholds. 1.0 is perfect, 0.5 is guessing</li></ul></div>
+        </div>
+      </div>
+
+      <div class="lp-group">
+        <h3>Confusion matrices</h3>
+        <p class="lp-desc">Rows are the true class and columns are the model’s prediction. The top-right cell counts anemic photos the model missed.</p>
+        <div class="lp-grid three">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/anemia/inception-confusion.png" aria-label="InceptionV3 confusion matrix"><span class="lp-win"><img src="assets/anemia/inception-confusion.png" alt="InceptionV3 confusion matrix" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption>InceptionV3 (best): 362 of 385 anemic cases caught, 23 missed</figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/anemia/densenet-confusion.png" aria-label="DenseNet169 confusion matrix"><span class="lp-win"><img src="assets/anemia/densenet-confusion.png" alt="DenseNet169 confusion matrix" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption>DenseNet169: 354 of 385 anemic cases caught, 31 missed</figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/anemia/xception-confusion.png" aria-label="Xception confusion matrix"><span class="lp-win"><img src="assets/anemia/xception-confusion.png" alt="Xception confusion matrix" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption>Xception: 337 of 385 anemic cases caught, 48 missed</figcaption></figure>
+        </div>
+        <p class="d-note" style="margin-top:14px">The DenseNet169 plots come from re-evaluating its saved best weights on the same test split (evaluate_densenet.py in the GitHub repo). This reproduced the reported metrics exactly: 90.90% accuracy and 0.9550 AUC-ROC.</p>
+      </div>
+
+      <div class="lp-group">
+        <h3>Training curves</h3>
+        <p class="lp-desc">Accuracy and loss on the training and validation sets, epoch by epoch.</p>
+        <div class="lp-grid three curves">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/anemia/inception-history.png" aria-label="InceptionV3 training history"><span class="lp-win"><img src="assets/anemia/inception-history.png" alt="InceptionV3 training history" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption>InceptionV3: steady improvement over 70 epochs</figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/anemia/densenet-history.png" aria-label="DenseNet169 training history"><span class="lp-win"><img src="assets/anemia/densenet-history.png" alt="DenseNet169 training history" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption>DenseNet169: training curve from a separate run with the same code and settings (that run reached 90.0% test accuracy)</figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/anemia/xception-history.png" aria-label="Xception training history"><span class="lp-win"><img src="assets/anemia/xception-history.png" alt="Xception training history" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption>Xception: the loss spikes at epoch 21, when fine-tuning starts</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2>Data</h2>
+      <p class="d-intro"><span lang="en">Two public datasets were combined and labelled by haemoglobin level: Hb below 11 g/dL is anemic, 11 g/dL or above is non-anemic.</span></p>
+      <div class="d-stats">
+        <div class="d-stat"><b>4,466</b><span><span lang="en">images in total</span></span></div>
+        <div class="d-stat"><b>2</b><span><span lang="en">public datasets</span></span></div>
+        <div class="d-stat"><b>2</b><span><span lang="en">classes</span></span></div>
+        <div class="d-stat"><b>670</b><span><span lang="en">test images</span></span></div>
+      </div>
+      <div class="d-tablewrap"><table class="d-table mini" style="max-width:none">
+        <tr><th><span lang="en">Dataset</span></th><th><span lang="en">Anemic</span></th><th><span lang="en">Non-anemic</span></th><th>Total</th></tr>
+        <tr><td>Ghana (Mendeley Data)</td><td>2,521</td><td>1,695</td><td>4,216</td></tr>
+        <tr><td>Skin &amp; fingernails (Figshare)</td><td>43</td><td>207</td><td>250</td></tr>
+        <tr class="best"><td><span lang="en">Combined</span></td><td>2,564</td><td>1,902</td><td>4,466</td></tr>
+      </table></div>
+      <p class="d-note"><span lang="en">Sources: Asare et al., “Detection of Anemia Using Colour of the Fingernails Image Datasets from Ghana” (Mendeley Data, 2022), and Yakimov et al., “Dataset of Human Skin and Fingernails Images for Non-Invasive Haemoglobin Level Assessment” (Scientific Data, 2024). For the second dataset, labels come from the haemoglobin column in its metadata. The Ghana dataset’s 4,216 images are 710 original photos plus augmented copies made by its authors.</span></p>
+      <div class="d-split dataset">
+        <figure class="d-shot chart" style="margin:0"><div><img src="assets/anemia/dataset-distribution.png" alt="Class distribution of the combined dataset" loading="lazy" onerror="this.classList.add('broken')"></div><figcaption><span lang="en">Class distribution of the combined dataset</span></figcaption></figure>
+        <div class="d-box"><h3><span lang="en">Preparing the data</span></h3>
+          <ul><li><span lang="en">Labels come from haemoglobin levels, with g/L values converted to g/dL where needed</span></li>
+          <li><span lang="en">Training adds its own augmentation on the fly, so it creates no new files. The Ghana dataset, however, already ships with augmented copies</span></li>
+          <li><span lang="en">The split is stratified, so each subset keeps the same anemic to non-anemic ratio</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">How it works</span></h2>
+      <p class="d-intro"><span lang="en">A sequential pipeline from raw photo to evaluated model.</span></p>
+      <ol class="d-flow five">
+        <li><h3>Lighting fix</h3><p>CLAHE evens out the contrast in the lightness channel of the LAB colour space, so photos taken under different lighting look more alike.</p></li>
+        <li><h3>Nail region</h3><p>The nail is cut out with the bounding boxes in the dataset metadata. Where there are none, YCbCr colour segmentation keeps the skin-coloured pixels.</p></li>
+        <li><h3>Resize</h3><p>Every image becomes 224 × 224 pixels, the size the CNNs expect, with pixel values scaled to 0 to 1.</p></li>
+        <li><h3>Split</h3><p>A stratified 70/15/15 split: about 3,126 images to train, 670 to tune and stop early (validation), and 670 for the final test.</p></li>
+        <li><h3>Train</h3><p>Transfer learning in two phases: first only a new classification head is trained on top of a frozen pre-trained network, then its top 30 layers are fine-tuned with a smaller learning rate.</p></li>
+      </ol>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Why these three models</span></h3>
+          <ul><li><span lang="en">DenseNet169: strong feature reuse and sensitivity to subtle colour differences</span></li>
+          <li><span lang="en">InceptionV3: captures visual features at multiple scales</span></li>
+          <li><span lang="en">Xception: efficient, using depthwise separable convolutions</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Training setup</span></h3>
+          <ul><li><span lang="en">Adam optimizer (learning rate 1e-4, then 1e-5 for fine-tuning), batch size 16, up to 20 epochs for the frozen phase and up to 50 for fine-tuning, with early stopping</span></li>
+          <li><span lang="en">Online augmentation: horizontal flip, brightness changes, and rotation up to ±20°</span></li>
+          <li><span lang="en">TensorFlow / Keras, same settings for all three models; the best weights are kept by validation accuracy</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Results</span></h2>
+      <p class="d-intro"><span lang="en">All three models were tested on the same 670 images (385 anemic, 285 non-anemic) with identical preprocessing.</span></p>
+      <div class="d-stats three">
+        <div class="d-stat"><b>91.94%</b><span><span lang="en">InceptionV3 accuracy</span></span></div>
+        <div class="d-stat"><b>0.9703</b><span>AUC-ROC</span></div>
+        <div class="d-stat"><b>94.03%</b><span><span lang="en">Recall on the anemic class</span></span></div>
+      </div>
+      <div class="d-tablewrap"><table class="d-table bycol">
+        <tr><th>Metric</th><th>DenseNet169</th><th>InceptionV3</th><th>Xception</th></tr>
+        <tr><td>Accuracy</td><td>90.90%</td><td>91.94%</td><td>80.45%</td></tr>
+        <tr><td>Precision</td><td>90.90%</td><td>91.94%</td><td>80.48%</td></tr>
+        <tr><td>Recall</td><td>90.90%</td><td>91.94%</td><td>80.45%</td></tr>
+        <tr><td>F1-score</td><td>90.90%</td><td>91.92%</td><td>80.23%</td></tr>
+        <tr><td>AUC-ROC</td><td>0.9550</td><td>0.9703</td><td>0.8747</td></tr>
+        <tr><td>Anemic precision</td><td>92.19%</td><td>92.11%</td><td>80.24%</td></tr>
+        <tr><td>Anemic recall</td><td>91.95%</td><td>94.03%</td><td>87.53%</td></tr>
+        <tr><td>Non-anemic recall</td><td>89.47%</td><td>89.12%</td><td>70.88%</td></tr>
+        <tr><td>Training stability</td><td>Good</td><td>Best</td><td>Moderate</td></tr>
+      </table></div>
+      <p class="d-note">Same table as in the paper, plus anemic recall, which comes from the confusion matrices. Precision, recall, and F1 are weighted averages over both classes, which is why weighted recall equals accuracy. Anemic precision, anemic recall, and non-anemic recall are per class. Training stability is a qualitative judgement from the training curves.</p>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Why recall matters here</span></h3>
+          <ul><li><span lang="en">InceptionV3 caught 362 of the 385 anemic cases and missed 23</span></li>
+          <li><span lang="en">DenseNet169 missed 31 (91.95% recall) and Xception missed 48 (87.53%)</span></li>
+          <li><span lang="en">For screening, a missed anemic patient costs more than a false alarm, so the anemic-class recall is the number to watch</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">What went wrong with Xception</span></h3>
+          <ul><li><span lang="en">Its loss spiked when it switched to fine-tuning, at epoch 21</span></li>
+          <li><span lang="en">The curves came back to about their pre-spike level, but training stopped at epoch 30 with validation accuracy near 82%, while InceptionV3 ran all 70 epochs. The spike probably hurt, but it was not tested as the cause of the 80.45% against 90 to 92% for the other two</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Limits and next steps</span></h2>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Limitations</span></h3>
+          <ul><li><span lang="en">The split was done per image. The Ghana dataset’s 4,216 images are 710 original photos plus augmented copies, so near-duplicates can land in both train and test, and the scores are probably optimistic</span></li>
+          <li><span lang="en">Classes are imbalanced (2,564 anemic vs 1,902 non-anemic), and the second dataset has only 250 images, 43 of them anemic</span></li>
+          <li><span lang="en">Binary labels are hard to judge near the 11 g/dL threshold, where the visual difference is subtle</span></li>
+          <li><span lang="en">The two datasets are preprocessed differently (YCbCr segmentation vs bounding boxes) and have very different class mixes, so a model could partly learn which dataset a photo came from</span></li>
+          <li><span lang="en">Each model was trained once on a single split, so there is no cross-validation or confidence interval</span></li>
+          <li><span lang="en">No Grad-CAM yet, no external dataset, and no testing in a real clinical setting</span></li></ul></div>
+        <div class="d-quote"><h3><span lang="en">Next steps</span></h3>
+          <ul style="color:inherit">
+            <li><span lang="en">Re-split by original photo and patient, then re-evaluate all three models</span></li>
+            <li><span lang="en">Grad-CAM to check that the model looks at the nail bed</span></li>
+            <li><span lang="en">EfficientNet and Vision Transformer</span></li>
+            <li><span lang="en">More skin tones and lighting conditions, then clinical validation</span></li>
+          </ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2>Research poster</h2>
+      <p class="d-intro">The project was also presented as a research poster for the course. Click it to see it full size.</p>
+      <div class="lp-grid">
+        <figure class="lp-shot wide"><button type="button" class="lp-tile" data-full="assets/anemia/poster.png" aria-label="Research poster: Anemia Detection from Fingernail RGB Images Using CNN"><span class="lp-win"><img src="assets/anemia/poster.png" alt="Research poster: Anemia Detection from Fingernail RGB Images Using CNN" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption>Introduction, methodology, results, datasets, conclusions, and future work on one page</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">My contribution</span></h2>
+      <p class="d-intro">A team project for the Research Methodology in Computer Science course at BINUS University, built by three people (Group 3). I implemented the three models, ran the experiments, and produced the research poster, and like the rest of the team I also helped with the literature review and writing the paper.</p>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">What I did</span></h3>
+          <ul><li><span lang="en">Implemented the three models and ran all the experiments</span></li>
+          <li><span lang="en">Contributed to the Methodology and Results &amp; Discussion sections</span></li>
+          <li><span lang="en">Planned, prepared, edited, and produced the research poster</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Done together</span></h3>
+          <ul><li><span lang="en">Choosing the research topic and discussing the methodology</span></li>
+          <li><span lang="en">Literature review and conclusion</span></li>
+          <li><span lang="en">Final writing, review, and revision of the paper</span></li></ul></div>
+      </div>
+    </section>
+
+    <div class="d-end">
+      <a class="btn btn-outline" href="index.html#portfolio"><span lang="en">Back to portfolio</span></a>
+    </div>
+  </main>
+
+  <script src="detail.js"></script>
+  <script>
+    (function () {
+      var box = document.createElement("div"); box.className = "lp-box"; box.setAttribute("role", "dialog"); box.setAttribute("aria-modal", "true");
+      box.innerHTML = '<span class="lp-x" aria-hidden="true">&times;</span><img alt="">'; document.body.appendChild(box);
+      var img = box.querySelector("img");
+      function close() { box.classList.remove("on"); document.body.style.overflow = ""; }
+      document.addEventListener("click", function (e) {
+        var t = e.target.closest(".lp-tile");
+        if (t) { img.src = t.dataset.full; img.alt = t.getAttribute("aria-label") || ""; box.classList.add("on"); document.body.style.overflow = "hidden"; }
+        else if (box.classList.contains("on")) close();
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    })();
+  </script>
+</body>
+</html>

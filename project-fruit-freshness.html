@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fruit Freshness Classification | Veby Novalisa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="detail.css">
+  <style>
+    .d-meta > div + div { padding-left: 28px; border-left: 1px solid color-mix(in srgb, currentColor 18%, transparent); }
+    @media (max-width: 900px) { .d-meta > div + div { padding-left: 0; border-left: 0; } }
+    .d-hero .actions { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(140px, 1fr); width: fit-content; gap: 20px; }
+    .d-hero .actions .btn { justify-content: center; }
+    .d-flow.five { grid-template-columns: repeat(5, 1fr); }
+    @media (max-width: 900px) { .d-flow.five { grid-template-columns: 1fr; } }
+    .d-note a { color: var(--olive); text-decoration: underline; }
+  
+    .lp-group { margin-top: 44px; }
+    .lp-group:first-of-type { margin-top: 28px; }
+    .lp-group > h3 { font-family: "Fraunces", serif; font-weight: 500; font-size: 1.4rem; margin: 0 0 6px; }
+    .lp-desc { margin: 0 0 18px; max-width: 62ch; opacity: .8; }
+    .lp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; align-items: start; }
+    .lp-grid.three { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .lp-shot { margin: 0; }
+    .lp-shot.wide { grid-column: 1 / -1; max-width: 820px; width: 100%; margin-inline: 0; }
+    .lp-tile { display: block; width: 100%; padding: 18px; border: 1.5px solid rgba(75, 82, 51, 0.3); border-radius: 24px; background: var(--bg); cursor: zoom-in; transition: transform .2s; }
+    .lp-grid.three .lp-tile { padding: 12px; border-radius: 18px; }
+    .lp-tile:hover { transform: translateY(-3px); }
+    .lp-tile:focus-visible { outline: 3px solid #4b5233; outline-offset: 3px; }
+    .lp-win { display: block; border-radius: 10px; overflow: hidden; background: #fff; border: 1px solid rgba(75, 82, 51, 0.18); box-shadow: 0 8px 20px rgba(51, 48, 31, .12); }
+    .lp-win img { display: block; width: 100%; height: auto; background: #fff; }
+    .lp-grid.three .lp-win img { aspect-ratio: 6 / 5; object-fit: contain; }
+    .lp-grid.three.curves .lp-win img { aspect-ratio: 13 / 5; }
+    .lp-shot figcaption { margin-top: 10px; font-size: .92rem; line-height: 1.45; }
+    @media (max-width: 900px) { .lp-grid.three { grid-template-columns: 1fr; } .lp-grid.three .lp-win img { aspect-ratio: auto; } }
+    @media (max-width: 700px) { .lp-grid { grid-template-columns: 1fr; } .lp-tile { padding: 14px; border-radius: 18px; } }
+    .lp-box { position: fixed; inset: 0; z-index: 100; display: none; overflow: auto; background: rgba(35, 33, 22, .88); padding: 32px 16px; cursor: zoom-out; }
+    .lp-box.on { display: block; }
+    .lp-box img { display: block; width: min(1500px, 100%); margin: 0 auto; border-radius: 8px; background: #fff; }
+    .lp-x { position: fixed; top: 14px; right: 20px; color: #fff; font-size: 2.2rem; line-height: 1; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html#home">
+        <span class="logo">VN</span>
+        <span class="brand-name">Veby Novalisa</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#portfolio" class="active">Portfolio</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Contact</a>
+    </div>
+  </header>
+
+  <main class="d-wrap">
+    <a class="d-back" href="index.html#portfolio">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span lang="en">Back to portfolio</span>
+    </a>
+
+    <section class="d-hero">
+      <div>
+        <p class="eyebrow"><span lang="en">AI/ML, Computer Vision, Team project</span></p>
+        <h1>Fruit Freshness <em>Classification</em></h1>
+        <p class="d-lead">
+          <span lang="en">A computer vision project that classifies fruit photos as fresh or rotten, for many fruit types in one model. EfficientNetB0 and ResNet50V2 are each trained with and without Gaussian Blur + CLAHE preprocessing, and the four variants are compared on the same 36-image test set.</span>
+          
+        </p>
+        <div class="actions">
+          <a class="btn btn-solid" href="https://github.com/vebynovalisa/fruit-freshness-classification" target="_blank" rel="noopener"><span>GitHub</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div class="d-cover"><img src="assets/fruit-freshness.png" alt="Fruit Freshness Classification" onerror="this.classList.add('broken')"></div>
+    </section>
+
+    <dl class="d-meta">
+      <div><dt><span lang="en">My role</span></dt><dd><span lang="en">Model Training &amp; Evaluation<br>Report Writing</span></dd></div>      <div><dt><span lang="en">Team</span></dt><dd><span lang="en">Team of 3</span></dd></div>
+      <div><dt><span lang="en">Year</span></dt><dd>2026</dd></div>
+      <div><dt>Tools</dt><dd>Python, TensorFlow/Keras, OpenCV</dd></div>
+    </dl>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">The problem</span></h2>
+      <p class="d-intro"><span lang="en">Rotten fruit that is not caught early can spoil the produce around it, which costs money and can put buyers at risk.</span></p>
+      <div class="d-cols">
+        <div class="d-box"><h3><span lang="en">Manual checks are slow</span></h3>
+          <ul><li><span lang="en">Quality inspection is still done by people, so it is slow, inconsistent, and subjective</span></li>
+          <li><span lang="en">Fatigue and changing light make the judgement drift</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Lighting gets in the way</span></h3>
+          <ul><li><span lang="en">Uneven lighting can hide small dark spots and early mould</span></li>
+          <li><span lang="en">This is why we tested contrast enhancement before the CNN</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">The approach</span></h3>
+          <ul><li><span lang="en">Binary classification: fresh vs rotten, for many fruit types at once</span></li>
+          <li><span lang="en">Transfer learning with two pre-trained CNNs</span></li>
+          <li><span lang="en">An ablation: the same setup with and without preprocessing</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Results at a glance</span></h2>
+      <p class="d-intro"><span lang="en">The evaluation figures from the experiments: the metric comparison first, then the confusion matrices, the preprocessing example, and the training curves. Click any figure to see it full size.</span></p>
+      <div class="lp-group">
+        <h3><span lang="en">Metric comparison</span></h3>
+        <p class="lp-desc"><span lang="en">The four variants on the same 36 test images, with a quick guide to the numbers.</span></p>
+        <div class="lp-grid">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/fruit-freshness/metrics-comparison.png" aria-label="Accuracy, precision, recall and F1 of the four variants"><span class="lp-win"><img src="assets/fruit-freshness/metrics-comparison.png" alt="Accuracy, precision, recall and F1 of the four variants" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Accuracy, precision, recall, and F1 for the four variants (with TTA)</span></figcaption></figure>
+          <div class="d-box"><h3><span lang="en">How to read the numbers</span></h3>
+            <ul><li><span lang="en"><b>Accuracy:</b> the share of the 36 test photos classified correctly</span></li>
+            <li><span lang="en"><b>F1:</b> balances precision and recall, averaged over fresh and rotten</span></li>
+            <li><span lang="en"><b>Per-class recall:</b> how many fresh and how many rotten photos each model got right</span></li></ul></div>
+        </div>
+      </div>
+
+      <div class="lp-group">
+        <h3><span lang="en">Confusion matrices</span></h3>
+        <p class="lp-desc"><span lang="en">Rows are the true class and columns are the prediction, so the top-right cell counts fresh fruit called rotten and the bottom-left counts rotten fruit called fresh.</span></p>
+        <div class="lp-grid">
+          <figure class="lp-shot wide"><button type="button" class="lp-tile" data-full="assets/fruit-freshness/confusion-matrices.png" aria-label="Confusion matrices of the four variants"><span class="lp-win"><img src="assets/fruit-freshness/confusion-matrices.png" alt="Confusion matrices of the four variants" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">All four variants. Both ResNet50V2 variants never called a fresh fruit rotten</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="lp-group">
+        <h3><span lang="en">Preprocessing example</span></h3>
+        <p class="lp-desc"><span lang="en">The same four fruit photos after Gaussian Blur + CLAHE and with resizing and normalisation only.</span></p>
+        <div class="lp-grid">
+          <figure class="lp-shot wide"><button type="button" class="lp-tile" data-full="assets/fruit-freshness/preprocessing.png" aria-label="The same fruit photos with and without preprocessing"><span class="lp-win"><img src="assets/fruit-freshness/preprocessing.png" alt="The same fruit photos with and without preprocessing" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Top row with Gaussian Blur + CLAHE, bottom row without</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="lp-group">
+        <h3><span lang="en">Training curves</span></h3>
+        <p class="lp-desc"><span lang="en">Accuracy and loss on the training and validation sets, for head training and then fine-tuning.</span></p>
+        <div class="lp-grid">
+          <figure class="lp-shot wide"><button type="button" class="lp-tile" data-full="assets/fruit-freshness/training-curves.png" aria-label="Training curves of the four variants"><span class="lp-win"><img src="assets/fruit-freshness/training-curves.png" alt="Training curves of the four variants" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Fine-tuning stopped early in every variant, and its best weights came from the first five epochs</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2>Data</h2>
+      <p class="d-intro"><span lang="en">One public Kaggle dataset of fruit photos, almost evenly split between fresh and rotten, covering fruits such as strawberry, apple, banana, kiwi, mango, grape, cherry, pear, peach, and orange.</span></p>
+      <div class="d-stats">
+        <div class="d-stat"><b>359</b><span><span lang="en">images in total</span></span></div>
+        <div class="d-stat"><b>10+</b><span><span lang="en">fruit types</span></span></div>
+        <div class="d-stat"><b>2</b><span><span lang="en">classes</span></span></div>
+        <div class="d-stat"><b>36</b><span><span lang="en">test images</span></span></div>
+      </div>
+      <div class="d-tablewrap"><table class="d-table mini" style="max-width:none">
+        <tr><th>Set</th><th><span lang="en">Fresh</span></th><th><span lang="en">Rotten</span></th><th>Total</th></tr>
+        <tr><td><span lang="en">Train (80%)</span></td><td>145</td><td>142</td><td>287</td></tr>
+        <tr><td><span lang="en">Validation (10%)</span></td><td>18</td><td>18</td><td>36</td></tr>
+        <tr><td><span lang="en">Test (10%)</span></td><td>18</td><td>18</td><td>36</td></tr>
+        <tr class="best"><td><span lang="en">Total</span></td><td>181</td><td>178</td><td>359</td></tr>
+      </table></div>
+      <p class="d-note"><span lang="en">Source: “Fruits Quality: Fresh vs Rotten” by Nour Abdoun on Kaggle.</span></p>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Preparing the data</span></h3>
+          <ul><li><span lang="en">The original train, validation, and test folders were merged, then split again, stratified 80/10/10</span></li>
+          <li><span lang="en">The split is saved to one file, so every variant is trained and tested on identical images</span></li>
+          <li><span lang="en">Balanced class weights are used during training</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Augmentation</span></h3>
+          <ul><li><span lang="en">Head training: strong (rotation up to 40°, flips, zoom 0.3, shear, brightness, channel shift)</span></li>
+          <li><span lang="en">Fine-tuning: light (rotation 15°, horizontal flip, zoom 0.1, small brightness change)</span></li>
+          <li><span lang="en">Augmentation runs on the raw image first, then enhancement and normalisation</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">How it works</span></h2>
+      <p class="d-intro"><span lang="en">The same pipeline is run four times: two architectures, each with and without the enhancement step.</span></p>
+      <ol class="d-flow five">
+        <li><h3><span lang="en">Resize</span></h3><p><span lang="en">Every photo becomes 224 × 224 and is split 80/10/10.</span></p></li>
+        <li><h3><span lang="en">Enhance</span></h3><p><span lang="en">Gaussian Blur (3×3), then CLAHE on the L channel of LAB. Skipped in the baseline.</span></p></li>
+        <li><h3><span lang="en">Normalise</span></h3><p><span lang="en">Each architecture’s own function: [0, 255] for EfficientNet, [−1, 1] for ResNet.</span></p></li>
+        <li><h3><span lang="en">Train</span></h3><p><span lang="en">Two phases: frozen backbone first, then the top layers fine-tuned.</span></p></li>
+        <li><h3><span lang="en">Evaluate</span></h3><p><span lang="en">Test-time augmentation over 7 passes, averaging the predicted probabilities.</span></p></li>
+      </ol>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">The two models</span></h3>
+          <ul><li><span lang="en">EfficientNetB0: about 5.3M parameters in its standard ImageNet version, simple head (5,122 trainable parameters: pooling, batch norm, dropout, softmax), top 20 layers unfrozen</span></li>
+          <li><span lang="en">ResNet50V2: about 25.6M parameters in its standard ImageNet version, deeper head (1,185,026 trainable parameters: 512 → 256 with dropout and L2), top 50 layers unfrozen</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Training setup</span></h3>
+          <ul><li><span lang="en">Adam, label smoothing 0.1, batch size 16</span></li>
+          <li><span lang="en">Head: up to 30 epochs at 1e-3. Fine-tuning: up to 25 epochs at 5e-5</span></li>
+          <li><span lang="en">Early stopping on validation accuracy, learning-rate reduction on plateau, same seed for all four runs</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Results</span></h2>
+      <p class="d-intro"><span lang="en">All four variants were tested on the same 36 images (18 fresh, 18 rotten), with test-time augmentation.</span></p>
+      <div class="d-stats three">
+        <div class="d-stat"><b>94.44%</b><span><span lang="en">Best accuracy (ResNet50V2 + preprocessing)</span></span></div>
+        <div class="d-stat"><b>0.9443</b><span><span lang="en">Best F1-score</span></span></div>
+        <div class="d-stat"><b>2 / 18</b><span><span lang="en">Rotten fruits it still missed</span></span></div>
+      </div>
+      <div class="d-tablewrap"><table class="d-table">
+        <tr><th><span lang="en">Variant</span></th><th>Accuracy</th><th>F1</th><th><span lang="en">Fresh correct</span></th><th><span lang="en">Rotten correct</span></th></tr>
+        <tr class="best"><td>ResNet50V2 + <span lang="en">preprocessing</span></td><td>94.44% (34/36)</td><td>0.9443</td><td>18 / 18</td><td>16 / 18</td></tr>
+        <tr><td>ResNet50V2</td><td>91.67% (33/36)</td><td>0.9161</td><td>18 / 18</td><td>15 / 18</td></tr>
+        <tr><td>EfficientNetB0 + <span lang="en">preprocessing</span></td><td>88.89% (32/36)</td><td>0.8889</td><td>16 / 18</td><td>16 / 18</td></tr>
+        <tr><td>EfficientNetB0</td><td>86.11% (31/36)</td><td>0.8610</td><td>16 / 18</td><td>15 / 18</td></tr>
+      </table></div>
+      <p class="d-note"><span lang="en">F1 is a weighted average over both classes. Weighted recall equals accuracy, so recall is shown per class instead.</span></p>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Reading the numbers</span></h3>
+          <ul><li><span lang="en">Preprocessing added one correct image for each architecture, about +2.8 points of F1</span></li>
+          <li><span lang="en">ResNet50V2 was ahead of EfficientNetB0 by two images in both settings</span></li>
+          <li><span lang="en">The direction is consistent, but with 36 test images one photo is worth 2.8 points, so these gaps are not proof</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Where it fails</span></h3>
+          <ul><li><span lang="en">Most mistakes are a rotten fruit predicted as fresh: 10 of the 14 errors across the four variants (one variant ties at 2 and 2)</span></li>
+          <li><span lang="en">Our likely explanation: partly spoiled fruits where most of the surface still looks fine. We have not yet inspected the misclassified photos one by one</span></li>
+          <li><span lang="en">For quality control this is the costly mistake, so it matters more than overall accuracy</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Limits and next steps</span></h2>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Limitations</span></h3>
+          <ul><li><span lang="en">The test set has only 36 images, so even the best accuracy could plausibly sit anywhere from about 82% to 98%</span></li>
+          <li><span lang="en">The folders were merged and split again per image, and we have not checked for duplicate or near-identical photos across train and test</span></li>
+          <li><span lang="en">Rotten fruit often appears on grass or wood and fresh fruit on white, so the model may partly learn the background. No Grad-CAM check yet</span></li>
+          <li><span lang="en">The two architectures differ in head size and unfrozen layers, so the comparison is not a clean test of the architectures alone. The 3×3 blur at σ = 0.5 is very mild, so most of the preprocessing effect likely comes from CLAHE, which we did not test separately</span></li></ul></div>
+        <div class="d-quote"><h3><span lang="en">Next steps</span></h3>
+          <ul style="color:inherit">
+            <li><span lang="en">Repeated stratified k-fold cross-validation, reporting mean ± standard deviation</span></li>
+            <li><span lang="en">Remove duplicate photos (perceptual hashing) before splitting</span></li>
+            <li><span lang="en">Grad-CAM to see whether the model looks at the fruit or the background</span></li>
+            <li><span lang="en">Test blur and CLAHE separately, and give both models the same head</span></li>
+            <li><span lang="en">More data, MobileNetV3 and Vision Transformer, then a real-time or mobile demo</span></li>
+          </ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">My contribution</span></h2>
+      <p class="d-intro"><span lang="en">A team project for the Computer Vision course at BINUS University, built by three people (Group 5). I trained and evaluated the model variants and worked on the report, and like the rest of the team I also helped with the dataset, the preprocessing, and the demo video.</span></p>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">What I did</span></h3>
+          <ul><li><span lang="en">Training and evaluating the four model variants</span></li>
+          <li><span lang="en">Writing parts of the final report: methodology, results, and discussion</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Done together</span></h3>
+          <ul><li><span lang="en">Choosing the topic and the dataset, and planning the experiments</span></li>
+          <li><span lang="en">Dataset preparation and image preprocessing</span></li>
+          <li><span lang="en">Analysing the results, the demo video, and documenting the GitHub repository</span></li></ul></div>
+      </div>
+    </section>
+
+    <div class="d-end">
+      <a class="btn btn-outline" href="index.html#portfolio"><span lang="en">Back to portfolio</span></a>
+    </div>
+  </main>
+
+  <script src="detail.js"></script>
+  <script>
+    (function () {
+      var box = document.createElement("div"); box.className = "lp-box"; box.setAttribute("role", "dialog"); box.setAttribute("aria-modal", "true");
+      box.innerHTML = '<span class="lp-x" aria-hidden="true">&times;</span><img alt="">'; document.body.appendChild(box);
+      var img = box.querySelector("img");
+      function close() { box.classList.remove("on"); document.body.style.overflow = ""; }
+      document.addEventListener("click", function (e) {
+        var t = e.target.closest(".lp-tile");
+        if (t) { img.src = t.dataset.full; img.alt = t.getAttribute("aria-label") || ""; box.classList.add("on"); document.body.style.overflow = "hidden"; }
+        else if (box.classList.contains("on")) close();
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    })();
+  </script>
+</body>
+</html>

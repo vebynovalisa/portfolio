@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinguID | Veby Novalisa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="detail.css">
+  <style>
+    .d-meta > div + div { padding-left: 28px; border-left: 1px solid color-mix(in srgb, currentColor 18%, transparent); }
+    @media (max-width: 900px) { .d-meta > div + div { padding-left: 0; border-left: 0; } }
+    .d-hero .actions { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; width: fit-content; gap: 20px; }
+    .d-hero .actions .btn { justify-content: center; }
+    .d-flow.five { grid-template-columns: repeat(5, 1fr); }
+    .d-flow.five li { display: flex; flex-direction: column; }
+    .d-flow.five li p { margin-bottom: 12px; }
+    .d-flow li .tag { display: inline-block; align-self: flex-start; margin-top: auto; padding: 2px 10px; border-radius: 999px; border: 1.3px solid var(--olive); font-size: 0.72rem; font-weight: 700; color: var(--olive); }
+    @media (max-width: 900px) { .d-flow.five { grid-template-columns: 1fr; } }
+
+    .lp-group { margin-top: 52px; }
+    .lp-group:first-of-type { margin-top: 36px; }
+    .lp-group h3 { font-family: "Fraunces", serif; font-weight: 500; font-size: 1.55rem; margin: 0 0 6px; }
+    .lp-desc { margin: 0 0 20px; max-width: 62ch; opacity: .8; }
+    .lp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; align-items: start; }
+    .lp-shot { margin: 0; }
+    .lp-tile { display: block; width: 100%; padding: 24px; border: 1.5px solid rgba(75, 82, 51, 0.3); border-radius: 24px; background: var(--bg); cursor: zoom-in; transition: transform .2s; }
+    .lp-tile:hover { transform: translateY(-3px); }
+    .lp-tile:focus-visible { outline: 3px solid #4b5233; outline-offset: 3px; }
+    .lp-win { display: block; border-radius: 10px; overflow: hidden; background: #f4f2e8; border: 1px solid rgba(75, 82, 51, 0.18); box-shadow: 0 8px 20px rgba(51, 48, 31, .12); }
+    .lp-win img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center top; }
+    .lp-shot figcaption { margin-top: 12px; font-size: .95rem; line-height: 1.45; }
+    @media (max-width: 700px) { .lp-grid { grid-template-columns: 1fr; } .lp-tile { padding: 14px; border-radius: 18px; } }
+    .lp-box { position: fixed; inset: 0; z-index: 100; display: none; overflow: auto; background: rgba(35, 33, 22, .88); padding: 32px 16px; cursor: zoom-out; }
+    .lp-box.on { display: block; }
+    .lp-box img { display: block; width: min(1500px, 100%); margin: 0 auto; border-radius: 8px; }
+    .lp-x { position: fixed; top: 14px; right: 20px; color: #fff; font-size: 2.2rem; line-height: 1; }
+
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html#home">
+        <span class="logo">VN</span>
+        <span class="brand-name">Veby Novalisa</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#portfolio" class="active">Portfolio</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Contact</a>
+    </div>
+  </header>
+
+  <main class="d-wrap">
+    <a class="d-back" href="index.html#portfolio">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span lang="en">Back to portfolio</span>
+    </a>
+
+    <section class="d-hero">
+      <div>
+        <p class="eyebrow"><span lang="en">AI/ML, Team project</span></p>
+        <h1>Lingu<em>ID</em></h1>
+        <p class="d-lead">
+          <span lang="en">A web app that classifies every Indonesian word as Formal, Non-Baku, or Typo, running a Logistic Regression model and a rule-based pipeline side by side so you can compare them on the same text.</span>
+          
+        </p>
+        <div class="actions">
+          <a class="btn btn-solid" href="https://linguid-nlp-analysis-output.vercel.app" target="_blank" rel="noopener"><span>Live Demo</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="btn btn-outline" href="https://github.com/haniahumayra/linguistic-NLP-analysis-output" target="_blank" rel="noopener"><span>GitHub</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div class="d-cover"><img src="assets/linguid.png" alt="LinguID" onerror="this.classList.add('broken')"></div>
+    </section>
+
+    <dl class="d-meta">
+      <div><dt><span lang="en">My role</span></dt><dd><span lang="en">ML Engineering<br>Frontend Development<br>Data Collection<br>Report Writing</span></dd></div>
+      <div><dt><span lang="en">Team</span></dt><dd><span lang="en">Team of 5</span></dd></div>
+      <div><dt><span lang="en">Year</span></dt><dd>2026</dd></div>
+      <div><dt>Tools</dt><dd>Python, scikit-learn, FastAPI, HTML/CSS/JS, Vercel</dd></div>
+    </dl>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">The problem</span></h2>
+      <p class="d-intro"><span lang="en">Indonesian online is full of shortened words, slang, and typos, often in the same sentence, while most NLP tools are trained on formal text.</span></p>
+      <div class="d-cols">
+        <div class="d-box"><h3><span lang="en">Three kinds of informal words</span></h3>
+          <ul><li><span lang="en">Abbreviations, such as “yg”, “dgn”, “bgt” (the system classes these as Non-Baku)</span></li>
+          <li><span lang="en">Slang and phonetic changes, such as “gue”, “lo”, “emang”, “kemaren”</span></li>
+          <li><span lang="en">Typos, such as “krja” or “dnegerin”</span></li>
+          <li><span lang="en">Each needs different handling: slang needs a formal equivalent, typos need spelling correction</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">One method at a time</span></h3>
+          <ul><li><span lang="en">Dictionary-based methods are precise but cannot handle new words</span></li>
+          <li><span lang="en">Machine learning generalises well but can be inconsistent on common words</span></li>
+          <li><span lang="en">Few projects show both approaches side by side</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">The solution</span></h3>
+          <ul><li><span lang="en">Token-level classification into Formal, Non-Baku, or Typo</span></li>
+          <li><span lang="en">Two independent pipelines running in parallel on the same input</span></li>
+          <li><span lang="en">One real-time dashboard that shows both results</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">The app</span></h2>
+      <p class="d-intro"><span lang="en">Type or paste a sentence and both pipelines analyse it at once. Below are the home and methodology pages, the two pipeline pages, the dashboard in two states, and finally the same sentence compared token by token. Click any screen to see it full size.</span></p>
+      <div class="lp-group">
+        <h3><span lang="en">Home and methodology</span></h3>
+        <p class="lp-desc"><span lang="en">The landing page with its two actions, and the Methodology page that introduces the two approaches before the pipeline pages.</span></p>
+        <div class="lp-grid">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/linguid/home.png" aria-label="LinguID home page"><span class="lp-win"><img src="assets/linguid/home.png" alt="LinguID home page" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Hero: “Deteksi Bahasa Typo &amp; Non-Baku dalam Sekejap.”</span></figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/linguid/methodology.png" aria-label="LinguID methodology page"><span class="lp-win"><img src="assets/linguid/methodology.png" alt="LinguID methodology page" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Methodology page</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="lp-group">
+        <h3><span lang="en">Pipelines</span></h3>
+        <p class="lp-desc"><span lang="en">A deep-dive page for each approach, opened from the Methodology page with “Pelajari Lebih Lanjut”.</span></p>
+        <div class="lp-grid">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/linguid/pipeline-ml.png" aria-label="Machine learning pipeline page"><span class="lp-win"><img src="assets/linguid/pipeline-ml.png" alt="Machine learning pipeline page" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Machine Learning pipeline</span></figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/linguid/pipeline-rule.png" aria-label="Rule-based pipeline page"><span class="lp-win"><img src="assets/linguid/pipeline-rule.png" alt="Rule-based pipeline page" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Rule-Based pipeline</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="lp-group">
+        <h3><span lang="en">Dashboard: empty state</span></h3>
+        <p class="lp-desc"><span lang="en">The first screen before any text is entered: the API URL, an empty input, and both perspectives showing placeholders.</span></p>
+        <div class="lp-grid">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/linguid/dashboard-empty-top.png" aria-label="Dashboard empty state, top"><span class="lp-win"><img src="assets/linguid/dashboard-empty-top.png" alt="Dashboard empty state, top" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Top: title, API URL, and the input box</span></figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/linguid/dashboard-empty-bottom.png" aria-label="Dashboard empty state, bottom"><span class="lp-win"><img src="assets/linguid/dashboard-empty-bottom.png" alt="Dashboard empty state, bottom" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Bottom: empty cards, highlights, and “Belum ada data” tables</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="lp-group">
+        <h3><span lang="en">Dashboard: with a sentence</span></h3>
+        <p class="lp-desc"><span lang="en">The sample sentence “Gue udah bilang ke dia kemarin tapi ga mau dnegerin karna lagi sibuk”. Typos are highlighted in red and Non-Baku words in orange.</span></p>
+        <div class="lp-grid">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/linguid/dashboard-filled-top.png" aria-label="Dashboard with input, top"><span class="lp-win"><img src="assets/linguid/dashboard-filled-top.png" alt="Dashboard with input, top" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Top: the filled input and the summary cards for ML and Rule-Based</span></figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/linguid/dashboard-filled-bottom.png" aria-label="Dashboard with input, bottom"><span class="lp-win"><img src="assets/linguid/dashboard-filled-bottom.png" alt="Dashboard with input, bottom" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Bottom: token tables with confidence (ML) and trigger (Rule-Based)</span></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="lp-group">
+        <h3><span lang="en">Machine Learning vs Rule-Based</span></h3>
+        <p class="lp-desc"><span lang="en">The same sentence, token by token, as each pipeline sees it.</span></p>
+        <div class="d-tablewrap"><table class="d-table mini" style="max-width:none">
+        <tr><th>Token</th><th>Machine Learning</th><th>Rule-Based</th></tr>
+        <tr><td>Gue</td><td>Non-Baku → saya</td><td>Non-Baku (Phonetic Override) → saya</td></tr>
+        <tr><td>udah</td><td>Non-Baku → sudah</td><td>Non-Baku (Phonetic Override) → sudah</td></tr>
+        <tr><td>bilang</td><td>Non-Baku → mengatakan</td><td>Non-Baku (Phonetic Override) → mengatakan</td></tr>
+        <tr><td>ga</td><td>Non-Baku → enggak</td><td>Non-Baku (Phonetic Override) → enggak</td></tr>
+        <tr class="best"><td>dnegerin</td><td>Typo → negeri</td><td>Non-Baku (No Match)</td></tr>
+        <tr><td>karna</td><td>Non-Baku → karena</td><td>Non-Baku (Phonetic Override) → karena</td></tr>
+      </table></div>
+        <p class="d-note" style="margin-top:14px"><span lang="en">“dnegerin” is in no dictionary. The ML pipeline still recognises it as a typo from its character patterns, while the rule-based pipeline can only fall back to its default label. The other seven words are Formal in both. The ML label is right, but its suggestion (“negeri”) is weak: the fuzzy match picks a similar KBBI spelling, not the intended word “mendengarkan”.</span></p>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Data</span></h2>
+      <p class="d-intro"><span lang="en">Five public sources serve two jobs: training data for the ML pipeline and a lookup knowledge base for the rule-based pipeline.</span></p>
+      <div class="d-stats">
+        <div class="d-stat"><b>172,140</b><span><span lang="en">words, after data engineering</span></span></div>
+        <div class="d-stat"><b>5</b><span><span lang="en">data sources</span></span></div>
+        <div class="d-stat"><b>3</b><span><span lang="en">classes</span></span></div>
+        <div class="d-stat"><b>34,428</b><span><span lang="en">test samples</span></span></div>
+      </div>
+      <div class="d-tablewrap"><table class="d-table mini" style="max-width:none">
+        <tr><th><span lang="en">Class</span></th><th><span lang="en">Sources</span></th><th><span lang="en">After data engineering</span></th></tr>
+        <tr><td>Formal</td><td>KBBI V (99,907 → 70,335 after deduplication)</td><td>70,875</td></tr>
+        <tr><td>Non-Baku</td><td>IndoCollex, Pujangga Lexicon, Kamus Alay</td><td>27,130</td></tr>
+        <tr><td>Typo</td><td>SALTIK + synthetic typos</td><td>74,135</td></tr>
+      </table></div>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Preparing the data</span></h3>
+          <ul><li><span lang="en">Deduplication, and removing KBBI entries labelled colloquial</span></li>
+          <li><span lang="en">54 common formal words (yang, dan, di, ke) are protected from typo generation and boosted 10×</span></li>
+          <li><span lang="en">Non-Baku is upsampled 5× because it has far fewer entries than the other classes</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Synthetic typos and the split</span></h3>
+          <ul><li><span lang="en">20,000 random formal words from KBBI were corrupted with four operations: swap, delete, replace, insert</span></li>
+          <li><span lang="en">This produced 19,240 new typo examples to help the model generalise</span></li>
+          <li><span lang="en">Stratified 80/20 split, so each class keeps the same proportion in the training and test sets</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">How it works: Machine Learning</span></h2>
+      <p class="d-intro"><span lang="en">A probabilistic pipeline that learns spelling patterns, so it can judge words it has never seen. These are the steps each token goes through at prediction time.</span></p>
+      <ol class="d-flow">
+        <li><h3>Preprocessing</h3><p><span lang="en">Lowercase and strip non-letters. Repeated letters like “iyaaaa” are kept, because they are a useful signal.</span></p></li>
+        <li><h3>Stopword guard</h3><p><span lang="en">A short list of common function words (yang, dan, di, ke) goes straight to Formal (confidence 1.0), so their n-grams are not mistaken for typos.</span></p></li>
+        <li><h3><span lang="en">Feature union</span></h3><p><span lang="en">Character TF-IDF (2 to 5), word TF-IDF (1 to 2), and text stats, combined into 40,003 features per token.</span></p></li>
+        <li><h3><span lang="en">Classify and suggest</span></h3><p><span lang="en">One-vs-Rest Logistic Regression picks the label. Typos get a fuzzy match to KBBI, Non-Baku words get a formal equivalent.</span></p></li>
+      </ol>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">How it works: Rule-Based</span></h2>
+      <p class="d-intro"><span lang="en">A deterministic pipeline that checks a token against dictionaries in priority order and stops at the first match.</span></p>
+      <ol class="d-flow five">
+        <li><h3>Phonetic override</h3><p><span lang="en">5,315 slang-to-formal entries. A match means Non-Baku with a formal suggestion.</span></p><span class="tag">Non-Baku</span></li>
+        <li><h3>KBBI exact match</h3><p><span lang="en">70,335 standard words. A match means Formal.</span></p><span class="tag">Formal</span></li>
+        <li><h3>SALTIK typo</h3><p><span lang="en">54,895 unique typo entries. A match means Typo, with its error type.</span></p><span class="tag">Typo</span></li>
+        <li><h3><span lang="en">Elongation pattern</span></h3><p><span lang="en">Reduces repeated letters, then re-checks KBBI, the phonetic list, and SALTIK.</span></p><span class="tag">Non-Baku / Typo</span></li>
+        <li><h3><span lang="en">No match</span></h3><p><span lang="en">Fallback label Non-Baku with confidence 0.0 and no suggestion.</span></p><span class="tag">Fallback</span></li>
+      </ol>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Results</span></h2>
+      <p class="d-intro"><span lang="en">The ML pipeline was evaluated on 34,428 held-out test words (20% stratified split).</span></p>
+      <div class="d-stats three">
+        <div class="d-stat"><b>88.38%</b><span>Accuracy</span></div>
+        <div class="d-stat"><b>0.90</b><span><span lang="en">F1-score (macro)</span></span></div>
+        <div class="d-stat"><b>0.91</b><span><span lang="en">Recall (macro)</span></span></div>
+      </div>
+      <div class="d-tablewrap"><table class="d-table">
+        <tr><th><span lang="en">Class</span></th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>Support</th></tr>
+        <tr><td>Formal</td><td>90.12%</td><td>0.84</td><td>0.90</td><td>0.87</td><td>14,175</td></tr>
+        <tr><td>Non-Baku</td><td>99.69%</td><td>0.94</td><td>1.00</td><td>0.97</td><td>5,426</td></tr>
+        <tr><td>Typo</td><td>82.59%</td><td>0.91</td><td>0.83</td><td>0.86</td><td>14,827</td></tr>
+        <tr class="best"><td>Overall</td><td>88.38%</td><td>0.90</td><td>0.91</td><td>0.90</td><td>34,428</td></tr>
+      </table></div>
+      <p class="d-note"><span lang="en">Precision, recall, and F1 in the Overall row are macro averages. Non-Baku scores highest, but this is likely inflated: upsampling was applied before the train-test split, so duplicate words appear in both sets. Formal benefits from the wide KBBI vocabulary. Typo is the hardest class because real typos vary so much that even synthetic generation cannot cover them all. Only the ML pipeline has accuracy figures; the rule-based pipeline is compared qualitatively.</span></p>
+      <div class="d-split">
+        <div class="d-box"><h3>Machine Learning</h3>
+          <ul><li><span lang="en">Strength: generalises to new words through character n-grams</span></li>
+          <li><span lang="en">Gives a confidence score for every word</span></li>
+          <li><span lang="en">Limit: sometimes inconsistent on very short words</span></li></ul></div>
+        <div class="d-box"><h3>Rule-Based</h3>
+          <ul><li><span lang="en">Strength: fully consistent and easy to trace layer by layer for words in the dictionary</span></li>
+          <li><span lang="en">Confidence is 1.0 on any match</span></li>
+          <li><span lang="en">Limit: cannot classify words outside the dictionaries</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2>Deployment</h2>
+      <p class="d-intro"><span lang="en">A FastAPI backend loads the saved model once at startup and serves a plain HTML, CSS, and JavaScript dashboard, deployed on Vercel.</span></p>
+      <ol class="d-flow">
+        <li><h3><span lang="en">Input</span></h3><p><span lang="en">The user types a sentence, which is split into word tokens.</span></p></li>
+        <li><h3>FastAPI</h3><p><span lang="en">/predict analyses one sentence, /predict/batch up to 100 at a time.</span></p></li>
+        <li><h3><span lang="en">Two pipelines</span></h3><p><span lang="en">The saved ML model and the rule-based lookup run independently on each token.</span></p></li>
+        <li><h3>Dashboard</h3><p><span lang="en">Both results appear side by side with highlights, confidence, and suggestions.</span></p></li>
+      </ol>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Limits and next steps</span></h2>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Limitations</span></h3>
+          <ul><li><span lang="en">Words are classified one by one, without the context of the whole sentence</span></li>
+          <li><span lang="en">Synthetic typos use only four patterns, so more complex mistakes are not fully covered</span></li>
+          <li><span lang="en">The strong Non-Baku score comes largely from upsampling applied before the split (duplicates appear in both train and test), so it overstates real performance and borderline words may lean towards Non-Baku</span></li>
+          <li><span lang="en">Phonetic override runs before the KBBI check, so a few standard words (such as “jawab” or “minta”) are labelled Non-Baku by the rule-based pipeline</span></li>
+          <li><span lang="en">No support for code-switching, such as Indonesian mixed with English</span></li></ul></div>
+        <div class="d-quote"><h3><span lang="en">Next steps</span></h3>
+          <ul style="color:inherit">
+            <li><span lang="en">IndoBERT to understand context and improve typo detection</span></li>
+            <li><span lang="en">A larger, regularly updated slang and typo dataset</span></li>
+            <li><span lang="en">An ensemble that combines both pipelines into one prediction</span></li>
+            <li><span lang="en">Code-switching detection</span></li>
+          </ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2>My contribution</h2>
+      <p class="d-intro">A team project for the Natural Language Processing course at BINUS University, built by five people (Group 7). I worked as an ML engineer and frontend UI developer, and like the rest of the team I also helped collect the datasets and write the report.</p>
+      <div class="d-split">
+        <div class="d-box"><h3>Machine learning</h3>
+          <ul><li>Collecting and preparing the five data sources: KBBI, SALTIK, IndoCollex, Pujangga, and Kamus Alay</li>
+          <li>Building the ML pipeline with TF-IDF features and a Logistic Regression classifier</li>
+          <li>Evaluating the model on the test set and comparing it with the rule-based pipeline qualitatively</li></ul></div>
+        <div class="d-box"><h3>Web app and report</h3>
+          <ul><li>Designing the dashboard interface: highlights, summary cards, and token tables</li>
+          <li>Building the pages with HTML, CSS, and JavaScript</li>
+          <li>Writing the project report together with the team</li></ul></div>
+      </div>
+    </section>
+
+    <div class="d-end">
+      <a class="btn btn-outline" href="index.html#portfolio"><span lang="en">Back to portfolio</span></a>
+    </div>
+  </main>
+
+  <script src="detail.js"></script>
+  <script>
+    (function () {
+      var box = document.createElement("div"); box.className = "lp-box"; box.setAttribute("role", "dialog"); box.setAttribute("aria-modal", "true");
+      box.innerHTML = '<span class="lp-x" aria-hidden="true">&times;</span><img alt="">'; document.body.appendChild(box);
+      var img = box.querySelector("img");
+      function close() { box.classList.remove("on"); document.body.style.overflow = ""; }
+      document.addEventListener("click", function (e) {
+        var t = e.target.closest(".lp-tile");
+        if (t) { img.src = t.dataset.full; img.alt = t.getAttribute("aria-label") || ""; box.classList.add("on"); document.body.style.overflow = "hidden"; }
+        else if (box.classList.contains("on")) close();
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    })();
+  </script>
+
+</body>
+</html>

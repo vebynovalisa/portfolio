@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Renewable Energy Database | Veby Novalisa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="detail.css">
+  <style>
+    .d-meta > div + div { padding-left: 28px; border-left: 1px solid color-mix(in srgb, currentColor 18%, transparent); }
+    @media (max-width: 900px) { .d-meta > div + div { padding-left: 0; border-left: 0; } }
+    .d-hero .actions .btn { justify-content: center; }
+    .d-hero .actions { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); width: fit-content; gap: 20px; }
+    @media (max-width: 600px) { .d-hero .actions { grid-auto-flow: row; grid-auto-columns: 1fr; width: 100%; } }
+    .d-flow code, .d-note code { font-size: 0.82rem; background: rgba(75, 82, 51, 0.1); padding: 1px 6px; border-radius: 5px; word-break: break-all; }
+    .d-cover img { object-fit: cover; object-position: center; transform: scale(1.06) translateY(-4%); }
+    .d-box .btn { margin-top: 0; padding: 9px 18px; font-size: 0.88rem; }
+    .d-box.link { display: flex; flex-direction: column; align-items: flex-start; }
+    .d-box.link p { margin-bottom: 14px; }
+    .d-box.link .btn { margin-top: auto; }
+
+    .lp-group { margin-top: 52px; }
+    .lp-group:first-of-type { margin-top: 36px; }
+    .lp-group h3 { font-family: "Fraunces", serif; font-weight: 500; font-size: 1.55rem; margin: 0 0 6px; }
+    .lp-desc { margin: 0 0 20px; max-width: 62ch; opacity: .8; }
+    .lp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; align-items: start; }
+    .lp-grid.one { grid-template-columns: 1fr; }
+    .lp-shot { margin: 0; }
+    .lp-tile { display: block; width: 100%; padding: 24px; border: 1.5px solid rgba(75, 82, 51, 0.3); border-radius: 24px; background: var(--bg); cursor: zoom-in; transition: transform .2s; }
+    .lp-tile:hover { transform: translateY(-3px); }
+    .lp-tile:focus-visible { outline: 3px solid #4b5233; outline-offset: 3px; }
+    .lp-win { display: block; border-radius: 10px; overflow: hidden; background: #fff; border: 1px solid rgba(75, 82, 51, 0.18); box-shadow: 0 8px 20px rgba(51, 48, 31, .12); }
+    .lp-win img { display: block; width: 100%; height: auto; }
+    .lp-shot figcaption { margin-top: 12px; font-size: .95rem; line-height: 1.45; }
+    @media (max-width: 700px) { .lp-grid { grid-template-columns: 1fr; } .lp-tile { padding: 14px; border-radius: 18px; } }
+    .lp-box { position: fixed; inset: 0; z-index: 100; display: none; overflow: auto; background: rgba(35, 33, 22, .88); padding: 32px 16px; cursor: zoom-out; }
+    .lp-box.on { display: block; }
+    .lp-box img { display: block; width: min(1600px, 100%); margin: 0 auto; border-radius: 8px; background: #fff; }
+    .lp-x { position: fixed; top: 14px; right: 20px; color: #fff; font-size: 2.2rem; line-height: 1; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html#home">
+        <span class="logo">VN</span>
+        <span class="brand-name">Veby Novalisa</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#portfolio" class="active">Portfolio</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Contact</a>
+    </div>
+  </header>
+
+  <main class="d-wrap">
+    <a class="d-back" href="index.html#portfolio">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span lang="en">Back to portfolio</span>
+    </a>
+
+    <section class="d-hero">
+      <div>
+        <p class="eyebrow"><span lang="en">Software &amp; Data · Team project</span></p>
+        <h1>Renewable <em>Energy DB</em></h1>
+        <p class="d-lead">
+          <span lang="en">A relational database for a renewable energy installer. It connects sales, installation projects, maintenance, supplier deliveries, invoices and payments, so every order can be traced from the customer to the supplier. Designed from one messy table to Third Normal Form.</span>
+          
+        </p>
+        <div class="actions">
+          <a class="btn btn-solid" href="https://drive.google.com/drive/folders/1sKdxE23aeEkBIeYe5Y8go1aKVvR1WU9B" target="_blank" rel="noopener"><span lang="en">View Files</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div class="d-cover"><img src="assets/renewable-energy/thumb.png" alt="Entity relationship diagram of the Renewable Energy database" onerror="this.classList.add('broken')"></div>
+    </section>
+
+    <dl class="d-meta">
+      <div><dt><span lang="en">My role</span></dt><dd><span lang="en">Database Design<br>SQL Development<br>Database Normalization<br>Project Documentation</span></dd></div>
+      <div><dt><span lang="en">Team</span></dt><dd><span lang="en">Team of 5</span></dd></div>
+      <div><dt><span lang="en">Year</span></dt><dd>2025</dd></div>
+      <div><dt>Tools</dt><dd>MySQL, MySQL Workbench, draw.io, Excel</dd></div>
+    </dl>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">The problem</span></h2>
+      <p class="d-intro"><span lang="en">A renewable energy company runs several linked processes: selling equipment, managing installation projects, maintaining systems, and coordinating payments with suppliers. Without structured data, records go wrong and the whole flow is hard to follow.</span></p>
+      <div class="d-cols">
+        <div class="d-box"><h3><span lang="en">Everything in one table</span></h3>
+          <ul><li><span lang="en">The starting point mixes customers, products, suppliers, invoices and payments in the same rows</span></li>
+          <li><span lang="en">The same customer or product data is repeated again and again</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Anomalies</span></h3>
+          <ul><li><span lang="en">A new supplier cannot be added without a transaction</span></li>
+          <li><span lang="en">Changing one price means editing many rows, and deleting one transaction can erase delivery and invoice records</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">The solution</span></h3>
+          <ul><li><span lang="en">Normalise step by step into 13 tables in 3NF</span></li>
+          <li><span lang="en">Link them with primary and foreign keys, then check the design with real queries</span></li></ul></div>
+      </div>
+      <div class="d-stats">
+        <div class="d-stat"><b>13</b><span><span lang="en">tables</span></span></div>
+        <div class="d-stat"><b>3NF</b><span><span lang="en">normal form reached</span></span></div>
+        <div class="d-stat"><b>90</b><span><span lang="en">sample rows</span></span></div>
+        <div class="d-stat"><b>2</b><span><span lang="en">analysis queries</span></span></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">From UNF to 3NF</span></h2>
+      <p class="d-intro"><span lang="en">The design follows the normalisation steps in order. Each stage fixes one kind of problem. Click any image to see it full size.</span></p>
+      <ol class="d-flow">
+        <li><h3>UNF → 1NF</h3><p><span lang="en">Split cells that hold several values (such as two products in one row) into separate rows.</span></p></li>
+        <li><h3><span lang="en">Anomalies</span></h3><p><span lang="en">Show the insert, update and delete problems that the 1NF tables still have.</span></p></li>
+        <li><h3><span lang="en">Dependencies</span></h3><p><span lang="en">Find full, partial and transitive dependencies for every table.</span></p></li>
+        <li><h3>2NF → 3NF</h3><p><span lang="en">Remove partial dependencies, then move employee data into its own table to remove transitive ones.</span></p></li>
+      </ol>
+
+      <div class="lp-group"><h3>UNF → 1NF</h3><p class="lp-desc"><span lang="en">Six blocks of attributes in the unnormalised data, then the same data with one value per cell.</span></p>
+        <div class="lp-grid one">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/renewable-energy/unf.png" aria-label="Unnormalised form"><span class="lp-win"><img src="assets/renewable-energy/unf.png" alt="Unnormalised form" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">UNF: several values in one cell</span></figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/renewable-energy/1nf.png" aria-label="First normal form"><span class="lp-win"><img src="assets/renewable-energy/1nf.png" alt="First normal form" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">1NF: one value per cell, repeated rows</span></figcaption></figure>
+        </div></div>
+
+      <div class="lp-group"><h3><span lang="en">Anomalies in 1NF</span></h3><p class="lp-desc"><span lang="en">One concrete case for each kind: adding a supplier, changing a product price, and deleting a transaction.</span></p>
+        <div class="lp-grid one">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/renewable-energy/anomaly.png" aria-label="Insert, update and delete anomalies"><span class="lp-win"><img src="assets/renewable-energy/anomaly.png" alt="Insert, update and delete anomalies" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Insert, update and delete anomalies</span></figcaption></figure>
+        </div></div>
+
+      <div class="lp-group"><h3><span lang="en">Functional dependencies</span></h3><p class="lp-desc"><span lang="en">Which attributes depend on which key. This diagram decided how the tables were split.</span></p>
+        <div class="lp-grid one">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/renewable-energy/fd-diagram.png" aria-label="Functional dependency diagram"><span class="lp-win"><img src="assets/renewable-energy/fd-diagram.png" alt="Functional dependency diagram" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Dependency diagram for all attributes</span></figcaption></figure>
+        </div>
+        <div class="lp-grid one" style="margin-top:20px">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/renewable-energy/fd-keys.png" aria-label="Primary keys and full dependency"><span class="lp-win"><img src="assets/renewable-energy/fd-keys.png" alt="Primary keys and full dependency" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Primary key of each table in 1NF, and the full dependency</span></figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/renewable-energy/fd-partial.png" aria-label="Partial dependencies"><span class="lp-win"><img src="assets/renewable-energy/fd-partial.png" alt="Partial dependencies" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Partial dependencies: every entity depends only on its own ID, so each moves to its own table in 2NF</span></figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/renewable-energy/fd-transitive.png" aria-label="Transitive dependencies"><span class="lp-win"><img src="assets/renewable-energy/fd-transitive.png" alt="Transitive dependencies" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Transitive dependencies: installation and employee data get their own tables in 3NF</span></figcaption></figure>
+        </div></div>
+
+      <div class="lp-group"><h3>2NF → 3NF</h3><p class="lp-desc"><span lang="en">First 2NF: 11 tables, with the installation columns still inside <code>project</code>. Then 3NF: 13 tables, with installation and employee data separated and every non-key column depending only on its own key.</span></p>
+        <div class="lp-grid one">
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/renewable-energy/2nf.png" aria-label="Second normal form tables"><span class="lp-win"><img src="assets/renewable-energy/2nf.png" alt="Second normal form tables" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">2NF: partial dependencies removed, 11 tables</span></figcaption></figure>
+          <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/renewable-energy/3nf.png" aria-label="Third normal form tables"><span class="lp-win"><img src="assets/renewable-energy/3nf.png" alt="Third normal form tables" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">3NF: transitive dependencies removed, 13 tables</span></figcaption></figure>
+        </div></div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">What changed from 2NF to 3NF</span></h2>
+      <p class="d-intro"><span lang="en">Most tables were already clean after 2NF, so only two things changed: 11 tables became 13. 2NF removes columns that depend on part of a key. 3NF goes one step further and removes columns that depend on another non-key column.</span></p>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">1. Installation gets its own table</span></h3>
+          <ul><li><span lang="en">In 2NF, installation date, type and supervisor sat inside <code>project</code></span></li>
+          <li><span lang="en">But they are decided by <code>project_installation_id</code>, not by <code>project_id</code>. That is a transitive dependency</span></li>
+          <li><span lang="en">3NF moves them into <code>project_installation</code></span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">2. Employees get their own table</span></h3>
+          <ul><li><span lang="en">In 2NF, maintenance and installation only stored a supervisor ID</span></li>
+          <li><span lang="en">The supervisor’s name and position depend on that ID, not on the maintenance or installation record</span></li>
+          <li><span lang="en">3NF adds <code>employee</code>, and the supervisor columns become foreign keys to it</span></li></ul></div>
+      </div>
+      <div class="d-tablewrap"><table class="d-table mini" style="max-width:none">
+        <tr><th><span lang="en">Table</span></th><th>2NF</th><th>3NF</th></tr>
+        <tr><td>project</td><td><span lang="en">Includes the installation columns</span></td><td><span lang="en">Project name, duration and customer only</span></td></tr>
+        <tr><td>project_installation</td><td><span lang="en">Not a separate table</span></td><td><span lang="en">New table</span></td></tr>
+        <tr><td>employee</td><td><span lang="en">Not a separate table</span></td><td><span lang="en">New table</span></td></tr>
+        <tr><td><span lang="en">The other 10 tables</span></td><td><span lang="en">Already in 2NF</span></td><td><span lang="en">Unchanged</span></td></tr>
+      </table></div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">The schema</span></h2>
+      <p class="d-intro"><span lang="en">The ERD above shows all 13 tables. The centre of the design is <code>transaction_detail</code>: its composite key (transaction, product) ties each sold product to the supplier, supplier delivery and invoice behind it.</span></p>
+      <div class="d-tablewrap"><table class="d-table mini" style="max-width:none">
+        <tr><th><span lang="en">Area</span></th><th><span lang="en">Tables</span></th><th><span lang="en">What it holds</span></th></tr>
+        <tr><td><span lang="en">Sales</span></td><td>customer, transaction, transaction_detail, product</td><td><span lang="en">Who bought what, at what price and quantity</span></td></tr>
+        <tr><td><span lang="en">Projects</span></td><td>project, project_installation, maintenance, employee</td><td><span lang="en">Installation and maintenance work, with the supervisor in charge</span></td></tr>
+        <tr><td><span lang="en">Money</span></td><td>payment, invoice</td><td><span lang="en">Customer payments and supplier invoices</span></td></tr>
+        <tr><td><span lang="en">Logistics</span></td><td>supplier, supplier_delivery, customer_delivery</td><td><span lang="en">Goods coming in from suppliers and going out to customers</span></td></tr>
+      </table></div>
+      <p class="d-note"><span lang="en">The schema is written in MySQL (DDL) with primary keys, foreign keys, <code>NOT NULL</code> and a <code>UNIQUE</code> invoice number, then filled with sample data (DML).</span></p>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Querying it</span></h2>
+      <p class="d-intro"><span lang="en">Two queries check that the tables join correctly and answer business questions.</span></p>
+      <div class="lp-grid">
+        <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/renewable-energy/query-customer.png" aria-label="Revenue per customer query"><span class="lp-win"><img src="assets/renewable-energy/query-customer.png" alt="Revenue per customer query and result" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en"><b>Revenue per customer.</b> A <code>LEFT JOIN</code> keeps customers even with no transactions. PT GeoPower Nusantara is the largest at Rp 1.85 billion.</span></figcaption></figure>
+        <figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/renewable-energy/query-category.png" aria-label="Revenue per product category query"><span class="lp-win"><img src="assets/renewable-energy/query-category.png" alt="Revenue per product category query and result" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en"><b>Revenue per product category.</b> Joins product and transaction_detail, then groups by category. Geothermal leads at Rp 1.05 billion.</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Limits and next steps</span></h2>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Limitations</span></h3>
+          <ul><li><span lang="en">In the final schema, <code>project_installation</code> has no link to <code>project</code>, so an installation cannot be matched to its project by key</span></li>
+          <li><span lang="en">The sample data is small and not fully consistent: a transaction total does not always equal the sum of its line items, and a transaction can be marked Unpaid while a full payment exists</span></li>
+          <li><span lang="en">Status columns are free text, with no <code>CHECK</code>, <code>ENUM</code> or indexes</span></li></ul></div>
+        <div class="d-quote"><h3><span lang="en">Next steps</span></h3>
+          <ul style="color:inherit">
+            <li><span lang="en">Add <code>project_id</code> to <code>project_installation</code> with a foreign key</span></li>
+            <li><span lang="en">Make totals and payment status consistent, or compute them with a view</span></li>
+            <li><span lang="en">Add constraints and indexes for status columns and joins</span></li>
+            <li><span lang="en">More analysis: unpaid receivables, supplier performance, maintenance per supervisor</span></li>
+          </ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Project files</span></h2>
+      <div class="d-split">
+        <div class="d-box link"><h3><span lang="en">Full files on Google Drive</span></h3>
+          <p><span lang="en">The slides (PDF), the DDL and DML SQL script, and the Excel workbook with every normalisation step.</span></p>
+          <a class="btn btn-solid" href="https://drive.google.com/drive/folders/1sKdxE23aeEkBIeYe5Y8go1aKVvR1WU9B" target="_blank" rel="noopener"><span lang="en">View Files</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+        <div class="d-box"><h3><span lang="en">Run it yourself</span></h3>
+          <ul><li><span lang="en">Open the SQL script in MySQL Workbench</span></li>
+          <li><span lang="en">Run it once: it creates the <code>Renewable_Energy</code> database, the 13 tables and the sample data</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">My contribution</span></h2>
+      <p class="d-intro"><span lang="en">A team project for the Database course at BINUS University, built by five people (Group 12), on the topic Renewable Energy given by the lecturer.</span></p>
+      <div class="d-split" style="grid-template-columns:1fr">
+        <div class="d-box"><h3><span lang="en">What I did</span></h3>
+          <ul><li><span lang="en">Designed the ERD and decided the attributes of each table</span></li>
+          <li><span lang="en">Wrote the SQL scripts (DDL and DML) that create the 13 tables and fill them with sample data</span></li>
+          <li><span lang="en">Worked with the team on the functional dependencies, 2NF and 3NF</span></li>
+          <li><span lang="en">Helped write the documentation and prepare the project demo</span></li></ul></div>
+      </div>
+    </section>
+
+    <div class="d-end">
+      <a class="btn btn-outline" href="index.html#portfolio"><span lang="en">Back to portfolio</span></a>
+    </div>
+  </main>
+
+  <script src="detail.js"></script>
+  <script>
+    (function () {
+      var box = document.createElement("div"); box.className = "lp-box"; box.setAttribute("role", "dialog"); box.setAttribute("aria-modal", "true");
+      box.innerHTML = '<span class="lp-x" aria-hidden="true">&times;</span><img alt="">'; document.body.appendChild(box);
+      var img = box.querySelector("img");
+      function close() { box.classList.remove("on"); document.body.style.overflow = ""; }
+      document.addEventListener("click", function (e) {
+        var t = e.target.closest(".lp-tile");
+        if (t) { img.src = t.dataset.full; img.alt = t.getAttribute("aria-label") || ""; box.classList.add("on"); document.body.style.overflow = "hidden"; }
+        else if (box.classList.contains("on")) close();
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    })();
+  </script>
+
+</body>
+</html>

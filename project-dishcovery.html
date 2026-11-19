@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dishcovery | Veby Novalisa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="detail.css">
+  <style>
+    .d-meta > div + div { padding-left: 28px; border-left: 1px solid color-mix(in srgb, currentColor 18%, transparent); }
+    @media (max-width: 900px) { .d-meta > div + div { padding-left: 0; border-left: 0; } }
+    .d-hero .actions .btn { justify-content: center; }
+    .d-hero .actions { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); width: fit-content; gap: 20px; }
+    @media (max-width: 600px) { .d-hero .actions { grid-auto-flow: row; grid-auto-columns: 1fr; width: 100%; } }
+    .d-flow code, .d-note code { font-size: 0.82rem; background: rgba(75, 82, 51, 0.1); padding: 1px 6px; border-radius: 5px; word-break: break-all; }
+    .d-split > .d-tablewrap { align-self: start; }
+    .d-box.link { display: flex; flex-direction: column; align-items: flex-start; }
+    .d-box.link p { margin-bottom: 14px; }
+    .d-box.link .btn { margin-top: auto; }
+    .d-box .btn { margin-top: 0; padding: 9px 18px; font-size: 0.88rem; }
+
+    .lp-group { margin-top: 52px; }
+    .lp-group:first-of-type { margin-top: 36px; }
+    .lp-group h3 { font-family: "Fraunces", serif; font-weight: 500; font-size: 1.55rem; margin: 0 0 6px; }
+    .lp-desc { margin: 0 0 20px; max-width: 62ch; opacity: .8; }
+    .lp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; align-items: start; }
+    .lp-shot { margin: 0; }
+    .lp-shot.wide { grid-column: 1 / -1; max-width: 820px; width: 100%; margin-inline: auto; }
+    .lp-tile { display: block; width: 100%; padding: 24px; border: 1.5px solid rgba(75, 82, 51, 0.3); border-radius: 24px; background: var(--bg); cursor: zoom-in; transition: transform .2s; }
+    .lp-tile:hover { transform: translateY(-3px); }
+    .lp-tile:focus-visible { outline: 3px solid #4b5233; outline-offset: 3px; }
+    .lp-win { display: block; border-radius: 10px; overflow: hidden; background: #f4f2e8; border: 1px solid rgba(75, 82, 51, 0.18); box-shadow: 0 8px 20px rgba(51, 48, 31, .12); }
+    .lp-win img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center top; }
+    .lp-shot figcaption { margin-top: 12px; font-size: .95rem; line-height: 1.45; }
+    @media (max-width: 700px) { .lp-grid { grid-template-columns: 1fr; } .lp-tile { padding: 14px; border-radius: 18px; } }
+    .lp-box { position: fixed; inset: 0; z-index: 100; display: none; overflow: auto; background: rgba(35, 33, 22, .88); padding: 32px 16px; cursor: zoom-out; }
+    .lp-box.on { display: block; }
+    .lp-box img { display: block; width: min(1500px, 100%); margin: 0 auto; border-radius: 8px; }
+    .lp-x { position: fixed; top: 14px; right: 20px; color: #fff; font-size: 2.2rem; line-height: 1; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html#home">
+        <span class="logo">VN</span>
+        <span class="brand-name">Veby Novalisa</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#portfolio" class="active">Portfolio</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Contact</a>
+    </div>
+  </header>
+
+  <main class="d-wrap">
+    <a class="d-back" href="index.html#portfolio">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span lang="en">Back to portfolio</span>
+    </a>
+
+    <section class="d-hero">
+      <div>
+        <p class="eyebrow"><span lang="en">Software · Team project</span></p>
+        <h1>Dish<em>covery</em></h1>
+        <p class="d-lead">
+          <span lang="en">A recipe website for home cooks. Type the ingredients you have and the ones you must avoid, and Dishcovery ranks recipes by how well they match, so you can decide what to cook without opening dozens of pages.</span>
+          
+        </p>
+        <div class="actions">
+          <a class="btn btn-solid" href="https://github.com/haniahumayra/dishcovery" target="_blank" rel="noopener"><span>GitHub</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="btn btn-outline" href="https://www.figma.com/design/GMDfRm8l0NP68QIrcdjdMu/SoftEng?node-id=0-1&p=f" target="_blank" rel="noopener"><span>Figma</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+      </div>
+      <div class="d-cover"><img src="assets/dishcovery.png" alt="Dishcovery" onerror="this.classList.add('broken')"></div>
+    </section>
+
+    <dl class="d-meta">
+      <div><dt><span lang="en">My role</span></dt><dd><span lang="en">Backend Development<br>Database Management<br>Authentication &amp; Search<br>UI/UX Design</span></dd></div>
+      <div><dt><span lang="en">Team</span></dt><dd><span lang="en">Team of 5</span></dd></div>
+      <div><dt><span lang="en">Year</span></dt><dd>2026</dd></div>
+      <div><dt>Tools</dt><dd>Python, Flask, SQLite, HTML/CSS/JS, Figma</dd></div>
+    </dl>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">The problem</span></h2>
+      <p class="d-intro"><span lang="en">Most recipe sites show recipes in general. Home cooks start from what is in the fridge, and some need to avoid certain ingredients. Using what you already have also supports SDG 12, cutting food waste.</span></p>
+      <div class="d-cols">
+        <div class="d-box"><h3><span lang="en">Searching one by one</span></h3>
+          <ul><li><span lang="en">Users open many recipes to check whether each one fits what they have</span></li>
+          <li><span lang="en">Existing sites give no clear signal of how closely a recipe matches the ingredients entered</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Allergies and avoidances</span></h3>
+          <ul><li><span lang="en">Filtering out ingredients is limited, which matters for allergies and dietary needs</span></li>
+          <li><span lang="en">One missed ingredient in a recipe can make it unusable for someone</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">The solution</span></h3>
+          <ul><li><span lang="en">Search by dish name, ingredients you have, and ingredients to avoid</span></li>
+          <li><span lang="en">Every result shows a match percentage, sorted from best to worst</span></li>
+          <li><span lang="en">Accounts, favorites, and the option to publish your own recipes</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">The app</span></h2>
+      <p class="d-intro"><span lang="en">Search a dish, add ingredients you have and ones to avoid, then pick from results sorted by match. Click any screen to see it full size.</span></p>
+      <div class="lp-group"><h3><span lang="en">Home</span></h3><p class="lp-desc"><span lang="en">A hero with one clear action, then popular recipes and a paged list of everything.</span></p><div class="lp-grid "><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/home-hero.jpg" aria-label="Dishcovery home hero"><span class="lp-win"><img src="assets/dishcovery/home-hero.jpg" alt="Dishcovery home hero" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Hero with Explore Recipes</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/home-favorite.jpg" aria-label="Everyone favorite carousel"><span class="lp-win"><img src="assets/dishcovery/home-favorite.jpg" alt="Everyone favorite carousel" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Everyone favorite carousel</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/home-grid.jpg" aria-label="Recipe grid with category filter"><span class="lp-win"><img src="assets/dishcovery/home-grid.jpg" alt="Recipe grid with category filter" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Recipe grid with category filter</span></figcaption></figure></div></div><div class="lp-group"><h3><span lang="en">Login and sign up</span></h3><p class="lp-desc"><span lang="en">A split layout: food photo on the left, the form on the right.</span></p><div class="lp-grid "><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/login.jpg" aria-label="Login page"><span class="lp-win"><img src="assets/dishcovery/login.jpg" alt="Login page" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Login</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/signup.jpg" aria-label="Sign up page"><span class="lp-win"><img src="assets/dishcovery/signup.jpg" alt="Sign up page" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Sign up</span></figcaption></figure></div></div><div class="lp-group"><h3><span lang="en">Search by ingredients</span></h3><p class="lp-desc"><span lang="en">The main feature. Add what you have and what to avoid, and every card gets a match badge.</span></p><div class="lp-grid "><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/search-filter.jpg" aria-label="Search results with filters"><span class="lp-win"><img src="assets/dishcovery/search-filter.jpg" alt="Search results with filters" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Search “chicken”, include lemon, garlic, onion, avoid black pepper: 42 recipes ranked by match</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/search-more.jpg" aria-label="More search results"><span class="lp-win"><img src="assets/dishcovery/search-more.jpg" alt="More search results" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">More results, each with a Match badge and pagination</span></figcaption></figure></div></div><div class="lp-group"><h3><span lang="en">Recipe detail</span></h3><p class="lp-desc"><span lang="en">Photo and author on top, then ingredients beside numbered instructions, then similar recipes.</span></p><div class="lp-grid "><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/detail-top.jpg" aria-label="Recipe detail top"><span class="lp-win"><img src="assets/dishcovery/detail-top.jpg" alt="Recipe detail top" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Top: photo, author, description, favorite</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/detail-steps.jpg" aria-label="Ingredients and instructions"><span class="lp-win"><img src="assets/dishcovery/detail-steps.jpg" alt="Ingredients and instructions" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Middle: ingredients and cooking instructions</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/detail-similar.jpg" aria-label="Similar recipes"><span class="lp-win"><img src="assets/dishcovery/detail-similar.jpg" alt="Similar recipes" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Bottom: similar recipes</span></figcaption></figure></div></div><div class="lp-group"><h3><span lang="en">Profile</span></h3><p class="lp-desc"><span lang="en">Your own recipes, with edit and delete, and the ones you saved.</span></p><div class="lp-grid "><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/profile-recipes.jpg" aria-label="Profile my recipes"><span class="lp-win"><img src="assets/dishcovery/profile-recipes.jpg" alt="Profile my recipes" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">My Recipes</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/profile-favorites.jpg" aria-label="Profile saved favorites"><span class="lp-win"><img src="assets/dishcovery/profile-favorites.jpg" alt="Profile saved favorites" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Saved Favorites</span></figcaption></figure></div></div><div class="lp-group"><h3><span lang="en">Create a recipe</span></h3><p class="lp-desc"><span lang="en">A four-step form: basic info, portion and ingredients, time and instructions, type of food.</span></p><div class="lp-grid "><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/create-basic.jpg" aria-label="Create recipe step 1"><span class="lp-win"><img src="assets/dishcovery/create-basic.jpg" alt="Create recipe step 1" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Step 1: photo, name, description</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/create-steps.jpg" aria-label="Create recipe steps 2 to 4"><span class="lp-win"><img src="assets/dishcovery/create-steps.jpg" alt="Create recipe steps 2 to 4" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Steps 2 to 4: ingredients, instructions, type of food</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/create-discard.jpg" aria-label="Discard recipe dialog"><span class="lp-win"><img src="assets/dishcovery/create-discard.jpg" alt="Discard recipe dialog" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Discard confirmation</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/create-success.jpg" aria-label="Recipe published message"><span class="lp-win"><img src="assets/dishcovery/create-success.jpg" alt="Recipe published message" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Published confirmation</span></figcaption></figure></div></div><div class="lp-group"><h3><span lang="en">Edit a recipe</span></h3><p class="lp-desc"><span lang="en">Owners can update their own recipes. The form comes pre-filled, leaving with unsaved changes asks for confirmation, and saving shows a success message.</span></p><div class="lp-grid "><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/edit-form.jpg" aria-label="Edit recipe form"><span class="lp-win"><img src="assets/dishcovery/edit-form.jpg" alt="Edit recipe form" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Edit form, pre-filled</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/edit-discard.jpg" aria-label="Discard changes dialog"><span class="lp-win"><img src="assets/dishcovery/edit-discard.jpg" alt="Discard changes dialog" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Discard changes confirmation</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/edit-success.jpg" aria-label="Recipe updated message"><span class="lp-win"><img src="assets/dishcovery/edit-success.jpg" alt="Recipe updated message" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Updated confirmation</span></figcaption></figure></div></div><div class="lp-group"><h3><span lang="en">Delete a recipe</span></h3><p class="lp-desc"><span lang="en">Deleting is done from My Recipes in the profile. The delete button opens a confirmation first.</span></p><div class="lp-grid "><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/delete.jpg" aria-label="Delete recipe dialog"><span class="lp-win"><img src="assets/dishcovery/delete.jpg" alt="Delete recipe dialog" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Delete confirmation from the profile</span></figcaption></figure></div></div><div class="lp-group"><h3><span lang="en">About</span></h3><p class="lp-desc"><span lang="en">What the platform stands for.</span></p><div class="lp-grid "><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/about-intro.jpg" aria-label="About us"><span class="lp-win"><img src="assets/dishcovery/about-intro.jpg" alt="About us" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">About us</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/about-values.jpg" aria-label="About values"><span class="lp-win"><img src="assets/dishcovery/about-values.jpg" alt="About values" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Simplicity, Personalization, The Joy of Cooking</span></figcaption></figure><figure class="lp-shot"><button type="button" class="lp-tile" data-full="assets/dishcovery/about-story.jpg" aria-label="About story"><span class="lp-win"><img src="assets/dishcovery/about-story.jpg" alt="About story" loading="lazy" onerror="this.classList.add('broken')"></span></button><figcaption><span lang="en">Smarter Cooking</span></figcaption></figure></div></div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">How the match works</span></h2>
+      <p class="d-intro"><span lang="en">The core is a rule-based recommender, not a machine learning model. The <code>/api/search</code> endpoint filters and scores every recipe.</span></p>
+      <ol class="d-flow">
+        <li><h3>Input</h3><p><span lang="en">Dish name, ingredients to include, and ingredients to avoid.</span></p></li>
+        <li><h3><span lang="en">Exclude</span></h3><p><span lang="en">Any recipe containing an avoided ingredient is skipped.</span></p></li>
+        <li><h3><span lang="en">Score</span></h3><p><span lang="en">Match % = matched include ingredients ÷ total include ingredients × 100 (case-insensitive substring match).</span></p></li>
+        <li><h3><span lang="en">Sort</span></h3><p><span lang="en">Highest match first. When a dish name is typed, the query is capped at 100 recipes for speed.</span></p></li>
+      </ol>
+      <h3><span lang="en">Example from the app</span></h3>
+      <p><span lang="en">Search “chicken” (42 recipes), include lemon, garlic, onion, and avoid black pepper.</span></p>
+      <div class="d-split">
+        <div class="d-tablewrap"><table class="d-table">
+          <tr><th><span lang="en">Recipe</span></th><th><span lang="en">Matched</span></th><th>Match %</th></tr>
+          <tr class="best"><td>Lemon Chicken Orzo Soup</td><td>3 / 3</td><td>100%</td></tr>
+          <tr><td>Lemon Garlic Chicken</td><td>2 / 3</td><td>67%</td></tr>
+          <tr><td>Jerk Chicken Egg Rolls</td><td>1 / 3</td><td>33%</td></tr>
+          <tr><td>Fresh Figs and Chicken Thighs</td><td>0 / 3</td><td>0%</td></tr>
+        </table></div>
+        <div class="d-box"><h3><span lang="en">What this shows</span></h3>
+          <ul><li><span lang="en">Results are sorted from the highest match down</span></li>
+          <li><span lang="en">Recipes with 0% still appear, at the end of the list</span></li>
+          <li><span lang="en">A recipe containing black pepper never appears at all</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2>Data</h2>
+      <p class="d-intro"><span lang="en">The recipes come from a public CSV of 1,090 Allrecipes recipes, with fields such as name, cuisine path, rating, image, time, servings, ingredients, and directions. A setup script cleans it, labels each recipe with a category, and loads it into SQLite.</span></p>
+      <div class="d-stats three">
+        <div class="d-stat"><b>880</b><span><span lang="en">recipes after cleaning</span></span></div>
+        <div class="d-stat"><b>3</b><span><span lang="en">categories</span></span></div>
+        <div class="d-stat"><b>5</b><span><span lang="en">database tables</span></span></div>
+      </div>
+      <div class="d-tablewrap"><table class="d-table mini" style="max-width:none">
+        <tr><th><span lang="en">Step</span></th><th><span lang="en">Recipes left</span></th></tr>
+        <tr><td><span lang="en">Original CSV</span></td><td>1,090</td></tr>
+        <tr><td><span lang="en">After removing duplicate names</span></td><td>961</td></tr>
+        <tr><td><span lang="en">After the drink and non-food word filter</span></td><td>916</td></tr>
+        <tr class="best"><td><span lang="en">After excluding smoothies (final)</span></td><td>880</td></tr>
+      </table></div>
+      <p class="d-note"><span lang="en">By category, the 880 recipes split into 559 Dessert, 292 Main Dish, and 29 Breakfast. Recipes users create in the app are added on top of these.</span></p>
+      <div class="d-tablewrap"><table class="d-table mini" style="max-width:none">
+        <tr><th><span lang="en">Table</span></th><th><span lang="en">What it holds</span></th></tr>
+        <tr><td>recipes</td><td><span lang="en">All recipes, including ones users create (user_id 0 means a system recipe)</span></td></tr>
+        <tr><td>featured</td><td><span lang="en">A copy sorted by rating, used for the “Everyone favorite” carousel</span></td></tr>
+        <tr><td>users</td><td><span lang="en">Username, email, password, bio, and profile picture</span></td></tr>
+        <tr><td>favorites</td><td><span lang="en">Which user saved which recipe (each pair is unique)</span></td></tr>
+        <tr><td>follows</td><td><span lang="en">Follower and followed pairs, no interface yet</span></td></tr>
+      </table></div>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Cleaning the CSV</span></h3>
+          <ul><li><span lang="en">Duplicate recipe names are removed</span></li>
+          <li><span lang="en">Names with drink or non-food words (cocktail, wine, beer, juice, syrup, and similar) are filtered out, and smoothies are excluded</span></li>
+          <li><span lang="en">Very short names (three characters or fewer) are dropped</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Categorising and loading</span></h3>
+          <ul><li><span lang="en">Keyword rules on the name and cuisine path, checked in order: Dessert, then Breakfast, then Main Dish (the default)</span></li>
+          <li><span lang="en">The recipes table is shuffled, while the featured table is sorted by rating</span></li>
+          <li><span lang="en">An index on category speeds up filtering, and a demo user is added for testing</span></li></ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Under the hood</span></h2>
+      <p class="d-intro"><span lang="en">A client-server app: Vanilla JS pages call a Flask REST API backed by SQLite. The same Flask app also serves the HTML pages.</span></p>
+      <ol class="d-flow">
+        <li><h3><span lang="en">Pages</span></h3><p><span lang="en">10 HTML pages with their own JavaScript for search, recipe detail, profile, and create or edit.</span></p></li>
+        <li><h3>Flask</h3><p><span lang="en">app.py receives each request and runs the matching endpoint.</span></p></li>
+        <li><h3>SQLite</h3><p><span lang="en">Recipes, users, and favorites live in one file, recipes.db.</span></p></li>
+        <li><h3><span lang="en">Response</span></h3><p><span lang="en">The API returns JSON, and the page draws the cards.</span></p></li>
+      </ol>
+      <div class="d-stats three">
+        <div class="d-stat"><b>19</b><span><span lang="en">API endpoints</span></span></div>
+        <div class="d-stat"><b>10</b><span><span lang="en">HTML pages</span></span></div>
+        <div class="d-stat"><b>4</b><span><span lang="en">endpoint groups</span></span></div>
+      </div>
+      <div class="d-tablewrap"><table class="d-table mini" style="max-width:none">
+        <tr><th><span lang="en">Group</span></th><th><span lang="en">Endpoints</span></th><th><span lang="en">What it does</span></th></tr>
+        <tr><td><span lang="en">Search and browse</span></td><td>6</td><td><span lang="en">Match search, ingredient suggestions, recipe list, featured, recipe detail, similar recipes</span></td></tr>
+        <tr><td><span lang="en">Accounts</span></td><td>4</td><td><span lang="en">Register, login, check email, reset password</span></td></tr>
+        <tr><td><span lang="en">Profile and favorites</span></td><td>6</td><td><span lang="en">Profile and stats, profile data, own recipes, saved favorites, update profile, toggle favorite</span></td></tr>
+        <tr><td><span lang="en">Recipe management</span></td><td>3</td><td><span lang="en">Create, update, and delete a recipe</span></td></tr>
+      </table></div>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Ingredient suggestions</span></h3>
+          <ul><li><span lang="en">Ingredient lines are split on commas, ignoring commas inside brackets</span></li>
+          <li><span lang="en">Suggestions come from up to 50 recipes that match the dish name, with quantities and units stripped out</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Similar recipes</span></h3>
+          <ul><li><span lang="en">Keywords are taken from the recipe name, minus filler words like “easy” or “classic”</span></li>
+          <li><span lang="en">Up to six recipes are returned, filled from the same category when keywords find fewer than four</span></li></ul></div>
+      </div>
+      <p class="d-note"><span lang="en">Database queries are parameterised to prevent SQL injection.</span></p>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Run it locally</span></h2>
+      <p class="d-intro"><span lang="en">Dishcovery is not deployed publicly. The repo ships with a pre-built database, so it runs in a few commands. The screenshots above show it running.</span></p>
+      <ol class="d-flow">
+        <li><h3>Clone</h3><p><span lang="en">Clone the GitHub repo with</span> <code>git clone</code></p></li>
+        <li><h3><span lang="en">Install</span></h3><p><span lang="en">Create a venv, then install</span> <code>requirements.txt</code></p></li>
+        <li><h3><span lang="en">Start</span></h3><p><span lang="en">In the app folder:</span> <code>python app.py</code></p></li>
+        <li><h3><span lang="en">Open</span></h3><p><span lang="en">In your browser:</span> <code>127.0.0.1:5001</code></p></li>
+      </ol>
+      <p class="d-note"><span lang="en">To rebuild the database from recipes.csv, install pandas and run setup_db.py.</span></p>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">Limits and next steps</span></h2>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">Limitations</span></h3>
+          <ul><li><span lang="en">Passwords are stored as plain text, and sessions live in localStorage</span></li>
+          <li><span lang="en">Password reset only checks that the email exists, with no verification link</span></li>
+          <li><span lang="en">The API trusts the user_id sent by the browser, so editing and deleting a recipe are not yet checked against its owner on the server</span></li>
+          <li><span lang="en">Substring matching can give false matches, and the dataset is in English, so ingredients are searched in English</span></li>
+          <li><span lang="en">Categories come from keyword rules, and sweet words are checked first. About 218 of the 559 Dessert recipes are not under Desserts in the original data, so some savoury ones (such as a cranberry pork dish) are labelled Dessert</span></li>
+          <li><span lang="en">The follows table exists but has no interface yet, and the app is not deployed</span></li></ul></div>
+        <div class="d-quote"><h3><span lang="en">Next steps</span></h3>
+          <ul style="color:inherit">
+            <li><span lang="en">Hash passwords (bcrypt) and use token-based sessions</span></li>
+            <li><span lang="en">Categorise from the dataset’s own cuisine path instead of keywords</span></li>
+            <li><span lang="en">Check recipe ownership on the server for edit and delete</span></li>
+            <li><span lang="en">Email-verified password reset</span></li>
+            <li><span lang="en">Ingredient normalisation and Indonesian ingredient names</span></li>
+            <li><span lang="en">Public deployment with a hosted database</span></li>
+          </ul></div>
+      </div>
+    </section>
+
+    <section class="d-sec reveal">
+      <h2><span lang="en">My contribution</span></h2>
+      <p class="d-intro"><span lang="en">A team project for the Software Engineering course at BINUS University, built by five people (Group 5). Most areas were shared between two or three of us. I worked on the database and REST API, authentication, the search feature, and the create and edit pages, and I took part in the UI/UX design, UML, and Scrum with the team.</span></p>
+      <div class="d-split">
+        <div class="d-box"><h3><span lang="en">What I did</span></h3>
+          <ul><li><span lang="en">SQLite database setup, table schema, and the recipes.csv import</span></li>
+          <li><span lang="en">REST API development with Python Flask</span></li>
+          <li><span lang="en">Authentication: register, login, forgot password, and profile</span></li>
+          <li><span lang="en">Search page, ingredient filters, and the match percentage display</span></li>
+          <li><span lang="en">CSS styling and the create and edit recipe pages</span></li></ul></div>
+        <div class="d-box"><h3><span lang="en">Done together</span></h3>
+          <ul><li><span lang="en">UI/UX design in Figma</span></li>
+          <li><span lang="en">UML diagrams and Scrum</span></li>
+          <li><span lang="en">Hands-on across most of the other pages as the project came together</span></li></ul></div>
+      </div>
+    </section>
+
+    <div class="d-end">
+      <a class="btn btn-outline" href="index.html#portfolio"><span lang="en">Back to portfolio</span></a>
+    </div>
+  </main>
+
+  <script src="detail.js"></script>
+  <script>
+    (function () {
+      var box = document.createElement("div"); box.className = "lp-box"; box.setAttribute("role", "dialog"); box.setAttribute("aria-modal", "true");
+      box.innerHTML = '<span class="lp-x" aria-hidden="true">&times;</span><img alt="">'; document.body.appendChild(box);
+      var img = box.querySelector("img");
+      function close() { box.classList.remove("on"); document.body.style.overflow = ""; }
+      document.addEventListener("click", function (e) {
+        var t = e.target.closest(".lp-tile");
+        if (t) { img.src = t.dataset.full; img.alt = t.getAttribute("aria-label") || ""; box.classList.add("on"); document.body.style.overflow = "hidden"; }
+        else if (box.classList.contains("on")) close();
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    })();
+  </script>
+
+</body>
+</html>
